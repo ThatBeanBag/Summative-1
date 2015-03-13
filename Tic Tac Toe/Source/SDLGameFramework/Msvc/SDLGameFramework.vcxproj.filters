@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Source Files\GameBase">
+      <UniqueIdentifier>{a50a0059-93e5-4721-a31c-4bbc86f28cb1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{c9ecbaa6-1a08-40f2-8215-a209baeda00c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameBase\Sprite">
+      <UniqueIdentifier>{259e7d49-a37a-4566-939b-f96918190d09}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameObject">
+      <UniqueIdentifier>{84605ae0-5175-4842-9c9c-c67edac36a63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\GameView">
+      <UniqueIdentifier>{00aa8064-e443-4b7f-aa2b-8c078c4c8b14}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Console">
+      <UniqueIdentifier>{61fa3b22-b6b8-483f-a194-083c09935afe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3rdParty">
+      <UniqueIdentifier>{ba140ea8-9124-47ae-bc3a-308cec944479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\3rdParty\tinyxml">
+      <UniqueIdentifier>{82041159-08bc-4f20-b306-aebdfb1191d5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Physics">
+      <UniqueIdentifier>{9f5adf61-d3e7-461f-8ec8-b2ec2ddcee95}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Renderer">
+      <UniqueIdentifier>{3fe729ea-5f6f-480a-9fa5-67ff283f828c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Events">
+      <UniqueIdentifier>{7b47899e-d7d7-4cd3-8a0d-5f1d0dcbd02f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\GameStd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\tinyxml\tinystr.cpp">
+      <Filter>Source Files\3rdParty\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\tinyxml\tinyxml.cpp">
+      <Filter>Source Files\3rdParty\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\tinyxml\tinyxmlerror.cpp">
+      <Filter>Source Files\3rdParty\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\3rdParty\tinyxml\tinyxmlparser.cpp">
+      <Filter>Source Files\3rdParty\tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Events\EventData.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Events\EventManager.cpp">
+      <Filter>Source Files\Events</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameBase\Sprite\BackBuffer.cpp">
+      <Filter>Source Files\GameBase\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameBase\Sprite\Sprite.cpp">
+      <Filter>Source Files\GameBase\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameBase\GameApp.cpp">
+      <Filter>Source Files\GameBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameBase\GameLogic.cpp">
+      <Filter>Source Files\GameBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameObject\AnimationComponent.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameObject\DestroyAfterComponent.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameObject\GameObject.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameObject\ObjectComponent.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameObject\ObjectFactory.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameObject\PhysicsComponent.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameObject\PositionComponent.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameObject\RenderComponent.cpp">
+      <Filter>Source Files\GameObject</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GameView\HumanView.cpp">
+      <Filter>Source Files\GameView</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Physics\Physics.cpp">
+      <Filter>Source Files\Physics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Renderer\Renderer.cpp">
+      <Filter>Source Files\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Utilities\Utilities.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Utilities\Rect.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Utilities\Point.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Utilities\Line.cpp">
+      <Filter>Source Files\Utilities</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\GameStd.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\tinyxml\tinyxml.h">
+      <Filter>Source Files\3rdParty\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\3rdParty\tinyxml\tinystr.h">
+      <Filter>Source Files\3rdParty\tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Events\EventData.h">
+      <Filter>Source Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Events\EventManager.h">
+      <Filter>Source Files\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameBase\Sprite\BackBuffer.h">
+      <Filter>Source Files\GameBase\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameBase\Sprite\Sprite.h">
+      <Filter>Source Files\GameBase\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameBase\GameApp.h">
+      <Filter>Source Files\GameBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameBase\GameLogic.h">
+      <Filter>Source Files\GameBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameObject\AnimationComponent.h">
+      <Filter>Source Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameObject\DestroyAfterComponent.h">
+      <Filter>Source Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameObject\GameObject.h">
+      <Filter>Source Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameObject\ObjectComponent.h">
+      <Filter>Source Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameObject\ObjectFactory.h">
+      <Filter>Source Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameObject\PhysicsComponent.h">
+      <Filter>Source Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameObject\PositionComponent.h">
+      <Filter>Source Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameObject\RenderComponent.h">
+      <Filter>Source Files\GameObject</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameView\GameView.h">
+      <Filter>Source Files\GameView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GameView\HumanView.h">
+      <Filter>Source Files\GameView</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Physics\Physics.h">
+      <Filter>Source Files\Physics</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Renderer\Renderer.h">
+      <Filter>Source Files\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Utilities\Utilities.h">
+      <Filter>Source Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Utilities\Rect.h">
+      <Filter>Source Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Utilities\Point.h">
+      <Filter>Source Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Utilities\Line.h">
+      <Filter>Source Files\Utilities</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

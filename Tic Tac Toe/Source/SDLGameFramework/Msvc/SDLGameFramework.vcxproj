@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{0A70481F-0E05-487C-9DC1-F9FFD2133CC3}</ProjectGuid>
+    <RootNamespace>SDLGameFramework</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <TargetExt>.lib</TargetExt>
+    <IntDir>$(ProjectDir)..\..\Temp\$(PlatformName)$(Configuration)\</IntDir>
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\3rdParty\tinyxml;$(ProjectDir)..\3rdParty\fastdelegate;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\</OutDir>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <TargetExt>.lib</TargetExt>
+    <IntDir>$(ProjectDir)..\..\Temp\$(PlatformName)$(Configuration)\</IntDir>
+    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\3rdParty\tinyxml;$(ProjectDir)..\3rdParty\fastdelegate;$(IncludePath)</IncludePath>
+    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>GameStd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>GameStd.h</PrecompiledHeaderFile>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\3rdParty\tinyxml\tinystr.cpp" />
+    <ClCompile Include="..\3rdParty\tinyxml\tinyxml.cpp" />
+    <ClCompile Include="..\3rdParty\tinyxml\tinyxmlerror.cpp" />
+    <ClCompile Include="..\3rdParty\tinyxml\tinyxmlparser.cpp" />
+    <ClCompile Include="..\Events\EventData.cpp" />
+    <ClCompile Include="..\Events\EventManager.cpp" />
+    <ClCompile Include="..\GameBase\GameApp.cpp" />
+    <ClCompile Include="..\GameBase\GameLogic.cpp" />
+    <ClCompile Include="..\GameBase\Sprite\BackBuffer.cpp" />
+    <ClCompile Include="..\GameBase\Sprite\Sprite.cpp" />
+    <ClCompile Include="..\GameObject\AnimationComponent.cpp" />
+    <ClCompile Include="..\GameObject\DestroyAfterComponent.cpp" />
+    <ClCompile Include="..\GameObject\GameObject.cpp" />
+    <ClCompile Include="..\GameObject\ObjectComponent.cpp" />
+    <ClCompile Include="..\GameObject\ObjectFactory.cpp" />
+    <ClCompile Include="..\GameObject\PhysicsComponent.cpp" />
+    <ClCompile Include="..\GameObject\PositionComponent.cpp" />
+    <ClCompile Include="..\GameObject\RenderComponent.cpp" />
+    <ClCompile Include="..\GameStd.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\GameView\HumanView.cpp" />
+    <ClCompile Include="..\main.cpp" />
+    <ClCompile Include="..\Physics\Physics.cpp" />
+    <ClCompile Include="..\Renderer\Renderer.cpp" />
+    <ClCompile Include="..\Utilities\Line.cpp" />
+    <ClCompile Include="..\Utilities\Point.cpp" />
+    <ClCompile Include="..\Utilities\Rect.cpp" />
+    <ClCompile Include="..\Utilities\Utilities.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\3rdParty\tinyxml\tinystr.h" />
+    <ClInclude Include="..\3rdParty\tinyxml\tinyxml.h" />
+    <ClInclude Include="..\Events\EventData.h" />
+    <ClInclude Include="..\Events\EventManager.h" />
+    <ClInclude Include="..\GameBase\GameApp.h" />
+    <ClInclude Include="..\GameBase\GameLogic.h" />
+    <ClInclude Include="..\GameBase\Sprite\BackBuffer.h" />
+    <ClInclude Include="..\GameBase\Sprite\Sprite.h" />
+    <ClInclude Include="..\GameObject\AnimationComponent.h" />
+    <ClInclude Include="..\GameObject\DestroyAfterComponent.h" />
+    <ClInclude Include="..\GameObject\GameObject.h" />
+    <ClInclude Include="..\GameObject\ObjectComponent.h" />
+    <ClInclude Include="..\GameObject\ObjectFactory.h" />
+    <ClInclude Include="..\GameObject\PhysicsComponent.h" />
+    <ClInclude Include="..\GameObject\PositionComponent.h" />
+    <ClInclude Include="..\GameObject\RenderComponent.h" />
+    <ClInclude Include="..\GameStd.h" />
+    <ClInclude Include="..\GameView\GameView.h" />
+    <ClInclude Include="..\GameView\HumanView.h" />
+    <ClInclude Include="..\Physics\Physics.h" />
+    <ClInclude Include="..\Renderer\Renderer.h" />
+    <ClInclude Include="..\Utilities\Line.h" />
+    <ClInclude Include="..\Utilities\Point.h" />
+    <ClInclude Include="..\Utilities\Rect.h" />
+    <ClInclude Include="..\Utilities\Utilities.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
