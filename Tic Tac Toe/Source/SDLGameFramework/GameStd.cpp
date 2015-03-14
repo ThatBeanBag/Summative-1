@@ -32,7 +32,3 @@ const int g_kiONE_SECOND = 1000;
 const int g_kiDRAG_THRESHOLD = 5;
 
 const float g_kfINFINITY = FLT_MAX;
-
-const TColour g_kWHITE = RGB(255, 255, 255);
-const TColour g_kBLACK = RGB(0, 0, 0);
-const TColour g_kGREEN = RGB(0, 255, 0);

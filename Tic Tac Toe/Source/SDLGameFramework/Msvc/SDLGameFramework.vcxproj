@@ -91,7 +91,6 @@
     <ClCompile Include="..\Events\EventManager.cpp" />
     <ClCompile Include="..\GameBase\GameApp.cpp" />
     <ClCompile Include="..\GameBase\GameLogic.cpp" />
-    <ClCompile Include="..\GameBase\Sprite\BackBuffer.cpp" />
     <ClCompile Include="..\GameBase\Sprite\Sprite.cpp" />
     <ClCompile Include="..\GameObject\AnimationComponent.cpp" />
     <ClCompile Include="..\GameObject\DestroyAfterComponent.cpp" />
@@ -121,7 +120,6 @@
     <ClInclude Include="..\Events\EventManager.h" />
     <ClInclude Include="..\GameBase\GameApp.h" />
     <ClInclude Include="..\GameBase\GameLogic.h" />
-    <ClInclude Include="..\GameBase\Sprite\BackBuffer.h" />
     <ClInclude Include="..\GameBase\Sprite\Sprite.h" />
     <ClInclude Include="..\GameObject\AnimationComponent.h" />
     <ClInclude Include="..\GameObject\DestroyAfterComponent.h" />

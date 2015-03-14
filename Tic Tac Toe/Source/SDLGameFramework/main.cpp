@@ -35,7 +35,7 @@ int main(int argc, char* args[])
 
 	while(event.type != SDL_QUIT && g_pApp->IsRunning()) {
 		if(SDL_PollEvent(&event)) {
-			// TODO: Handle the events.
+			// Handle the event.
 			g_pApp->MsgProc(event);
 		}
 		else {

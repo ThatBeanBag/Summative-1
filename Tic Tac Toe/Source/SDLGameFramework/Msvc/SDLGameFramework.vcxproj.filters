@@ -64,9 +64,6 @@
     <ClCompile Include="..\Events\EventManager.cpp">
       <Filter>Source Files\Events</Filter>
     </ClCompile>
-    <ClCompile Include="..\GameBase\Sprite\BackBuffer.cpp">
-      <Filter>Source Files\GameBase\Sprite</Filter>
-    </ClCompile>
     <ClCompile Include="..\GameBase\Sprite\Sprite.cpp">
       <Filter>Source Files\GameBase\Sprite</Filter>
     </ClCompile>
@@ -137,9 +134,6 @@
     </ClInclude>
     <ClInclude Include="..\Events\EventManager.h">
       <Filter>Source Files\Events</Filter>
-    </ClInclude>
-    <ClInclude Include="..\GameBase\Sprite\BackBuffer.h">
-      <Filter>Source Files\GameBase\Sprite</Filter>
     </ClInclude>
     <ClInclude Include="..\GameBase\Sprite\Sprite.h">
       <Filter>Source Files\GameBase\Sprite</Filter>

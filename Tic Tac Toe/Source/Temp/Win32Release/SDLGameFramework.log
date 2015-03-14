@@ -1,0 +1,39 @@
+﻿Build started 14/03/2015 4:28:51 p.m..
+     1>Project "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\SDLGameFramework.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"GameStd.h" /Fp"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\SDLGameFramework.pch" /Fo"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\\" /Fd"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\3rdParty\tinyxml\tinystr.cpp ..\GameBase\Sprite\Sprite.cpp
+         tinystr.cpp
+         Sprite.cpp
+       Lib:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Lib\Win32Release\SDLGameFramework.lib" /NOLOGO /LTCG "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\tinystr.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\tinyxml.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\tinyxmlerror.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\tinyxmlparser.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\EventData.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\EventManager.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\GameApp.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\GameLogic.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Sprite.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\AnimationComponent.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\DestroyAfterComponent.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\GameObject.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\ObjectComponent.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\ObjectFactory.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\PhysicsComponent.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\PositionComponent.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\RenderComponent.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\GameStd.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\HumanView.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\main.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Physics.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Renderer.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Line.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Point.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Rect.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Utilities.obj"
+         SDLGameFramework.vcxproj -> C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Lib\Win32Release\SDLGameFramework.lib
+     1>Done Building Project "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\SDLGameFramework.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.89

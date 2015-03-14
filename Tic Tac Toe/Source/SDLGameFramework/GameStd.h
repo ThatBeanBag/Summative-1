@@ -62,11 +62,6 @@ extern const int g_kiDRAG_THRESHOLD;
 extern const float g_kfINFINITY;
 
 // Useful Typedefs
-typedef COLORREF TColour;
-
-extern const TColour g_kBLACK;
-extern const TColour g_kWHITE;
-extern const TColour g_kGREEN;
 
 // Local Includes
 #include "Utilities\Point.h"
