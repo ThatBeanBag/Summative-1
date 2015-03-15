@@ -39,6 +39,8 @@ public:
 	// Manages the effect of the state change within the tic tac toe logic then calls
 	// CGameLogic::VChangeState() to update the internal state representation.
 	virtual void VChangeState(EGameState _eState);
+
+	void CloseDelegateTest();
 protected:
 private:
 
@@ -46,6 +48,9 @@ private:
 public:
 protected:
 private:
+	CBoardState m_currentBoard;	// The current tic tac toe board.
+	bool m_bIsPlayersTurn;		// True if it's the players turn to play, false otherwise.
+	EPlayer m_ePlayer;			// Defines who the player is playing as.
 };
 
 #endif // __TICTACTOELOGIC_H__

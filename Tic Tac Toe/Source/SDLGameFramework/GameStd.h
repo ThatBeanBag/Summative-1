@@ -28,8 +28,6 @@
 #define __GAMESTD_H__
 
 // Library Includes
-//#include <Windows.h>
-//#include <WindowsX.h>
 #include <SDL.h>
 #include <SDL_image.h>
 
@@ -69,5 +67,6 @@ extern const float g_kfINFINITY;
 #include "Utilities\Utilities.h"
 #include "Events\EventManager.h"
 #include "GameBase\GameApp.h"
+#include "GUI\Button.h"
 
 #endif

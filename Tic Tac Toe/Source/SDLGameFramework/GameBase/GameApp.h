@@ -90,6 +90,7 @@ protected:
 
 	bool m_bIsRunning;			// True if the app is running, false otherwise.
 	bool m_bShowFrameRate;		// True if the frame should be shown, false if not (debug only).
+	bool m_bIsQuitting;			// True if the app is quitting.
 	CPoint m_screenSize;		// The app's screen size.
 	float m_fDeltaTime;			// The time of the last tick.
 	int m_iFrameRate;			// The frame rate to lock the game tick at in frames per second.

@@ -21,6 +21,7 @@
 #include "TicTacToeLogic.h"
 
 // Local Includes
+#include "TicTacToeHumanView.h"
 
 CTicTacToeLogic::CTicTacToeLogic()
 {
@@ -41,7 +42,15 @@ bool CTicTacToeLogic::VInit()
 		return false;
 	}
 
+	CHumanView* pHumanView = new CTicTacToeHumanView();
 
+	if (pHumanView) {
+		// Create the shared pointer.
+		TStrongGameViewPtr pStrongPtr(pHumanView);
+
+		// Add the view.
+		AddView(pStrongPtr);
+	}
 
 	// Return initialization successful.
 	return true;
@@ -50,10 +59,6 @@ bool CTicTacToeLogic::VInit()
 void CTicTacToeLogic::VUpdate(float _fDeltaTime)
 {
 	CGameLogic::VUpdate(_fDeltaTime);	// Updates the elapsed time.
-
-	CBoardState boardState;
-
-	boardState.GetWinner();
 }
 
 void CTicTacToeLogic::VChangeState(EGameState _eState)
@@ -68,3 +73,7 @@ void CTicTacToeLogic::VChangeState(EGameState _eState)
 	CGameLogic::VChangeState(_eState);
 }
 
+void CTicTacToeLogic::CloseDelegateTest()
+{
+	g_pApp->DrawLine(CPoint(100, 100), CPoint(300, 300), 255, 0, 0);
+}

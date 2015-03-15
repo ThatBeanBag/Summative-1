@@ -158,88 +158,6 @@ void CGameApp::MsgProc(const SDL_Event& event)
 
 		default: break;
 	}
-	//switch(_msg) {
-	//	case WM_CREATE: {
-	//		// Do initialization here...
-
-	//		// Return success.
-	//		return 0;
-	//		break;
-	//	}
-
-	//	case WM_COMMAND: {
-	//		break;
-	//	}
-
-	//	case WM_PAINT: {
-	//		HDC hdc;
-	//		PAINTSTRUCT ps;
-
-	//		hdc = BeginPaint(_hWnd, &ps);
-
-	//		// Do painting stuff here...
-
-	//		EndPaint(_hWnd, &ps);
-
-	//		// Return success.
-	//		return 0;
-	//		break;
-	//	}
-	//	
-	//	case WM_SIZE: {
-	//		// Get the new screen size.
-	//		g_pApp->UpdateScreenSize(CPoint(LOWORD(_lParam), HIWORD(_lParam)));
-
-	//		// Let windows handle the rest.
-	//		break;
-	//	}
-
-	//	case WM_CLOSE: {
-	//		return g_pApp->OnClose();
-	//		break;
-	//	}
-
-	//	// User Input
-	//	case WM_KEYDOWN:		// Fall through.
-	//	case WM_KEYUP:			// Fall through.
-	//	case WM_MOUSEMOVE:		// Fall through.
-	//	case WM_LBUTTONDOWN:	// Fall through.
-	//	case WM_LBUTTONUP:		// Fall through.
-	//	case WM_RBUTTONDOWN:	// Fall through.
-	//	case WM_RBUTTONUP: {
-	//		if(g_pApp->m_pGame) {
-	//		// The game logic is not NULL.
-	//			// Get the game logic.
-	//			CGameLogic* pGame = g_pApp->m_pGame;
-
-	//			CAppMsg msg;
-	//			msg.m_hWnd = _hWnd;
-	//			msg.m_lParam = _lParam;
-	//			msg.m_wParam = _wParam;
-	//			msg.m_uMsg = _msg;
-
-	//			if(pGame) {
-	//				if(pGame->VMsgProc(msg)) {
-	//					// Return success.
-	//					return 0;
-	//				}
-	//				else {
-	//					break;
-	//				}
-	//			}
-	//			else {
-	//				// Couldn't handle message.
-	//				break;
-	//			}
-	//		}
-	//		break;
-	//	}
-
-	//	default: {
-	//		break;
-	//	}
-
-	//}
 
 	return;
 }
@@ -350,7 +268,7 @@ void CGameApp::DrawLine(const CPoint& _krPoint1, const CPoint& _krPoint2,
 	SDL_RenderDrawLine(m_pRenderer, _krPoint1.m_iX, _krPoint1.m_iY, _krPoint2.m_iX, _krPoint2.m_iY);
 
 	// Set the render colour back to it's default of black.
-	SDL_SetRenderDrawColor(m_pRenderer, 255, 255, 255, SDL_ALPHA_OPAQUE);
+	SDL_SetRenderDrawColor(m_pRenderer, 0, 0, 0, SDL_ALPHA_OPAQUE);
 }
 
 void CGameApp::RenderSprite(const CSprite& _krSprite, int _iX, int _iY, int _iFrame)

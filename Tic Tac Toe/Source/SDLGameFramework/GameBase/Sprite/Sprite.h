@@ -42,7 +42,7 @@ public:
 
 	// Accessors
 	SDL_Texture* GetSprite() const;	// RETURNS the sprite.
-	SDL_Texture* Release();		// RELEASES the sprite; m_hBitmap will be NULL after this call.
+	SDL_Texture* Release();			// RELEASES the sprite; m_pSpriteSheet will be NULL after this call.
 
 	void AddMask(const CRect& _krMask);
 

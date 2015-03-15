@@ -56,5 +56,6 @@ private:
 };
 
 bool IsIntersecting(const CRect& _krRectA, const CRect& _krRectB);
+bool IsPointInside(const CRect& _krRect, const CPoint& _krPoint);
 
 #endif

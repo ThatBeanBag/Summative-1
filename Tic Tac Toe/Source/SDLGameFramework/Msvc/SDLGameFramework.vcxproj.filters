@@ -38,6 +38,9 @@
     <Filter Include="Source Files\Events">
       <UniqueIdentifier>{7b47899e-d7d7-4cd3-8a0d-5f1d0dcbd02f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GUI">
+      <UniqueIdentifier>{f34106a2-c5b1-4c54-b214-6b39a38dd819}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\GameStd.cpp">
@@ -118,6 +121,9 @@
     <ClCompile Include="..\Utilities\Line.cpp">
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
+    <ClCompile Include="..\GUI\Button.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\GameStd.h">
@@ -191,6 +197,9 @@
     </ClInclude>
     <ClInclude Include="..\Utilities\Line.h">
       <Filter>Source Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GUI\Button.h">
+      <Filter>Source Files\GUI</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

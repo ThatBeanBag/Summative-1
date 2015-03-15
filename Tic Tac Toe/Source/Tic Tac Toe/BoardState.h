@@ -60,19 +60,44 @@ enum EInvalidMove {
 // ======================================================================
 // The CBoardState class encapsulates the representation and 
 // implementation of the tic tac toe board.
+//
+// The board is stored contigously in memory with a size of N * N.
+//
+// You can imagine a 3 x 3 board like so:
+// 
+// +---+---+---+
+// | 0 | 1 | 2 |
+// +---+---+---+
+// | 3 | 4 | 5 |
+// +---+---+---+
+// | 6 | 7 | 8 |
+// +---+---+---+
+//
 // ======================================================================
 
 class CBoardState {
+	// Static members.
+public:
+	static const int s_kiBOARD_COL = 3;
+	static const int s_kiBOARD_SIZE = s_kiBOARD_COL * s_kiBOARD_COL;
+
 	// Member Functions
 public:
 	CBoardState();
+	CBoardState(const CBoardState& _krBoardState);
+
 	~CBoardState();
 
+	CBoardState& operator=(const CBoardState& _krBoardState);
+
+	const EPlayer& operator[](int _iBoardPosition) const;
+	EPlayer& operator[](int _iBoardPosition);
+
 	// Returns the winner, if there is one. If there is no winner this will return a blank.
-	EPlayer GetWinner();
+	EPlayer GetWinner() const;
 
 	// Returns true if the board has no empty or blank slots, false otherwise.
-	bool IsFull();
+	bool IsFull() const;
 
 	// Places a move only if the space is eBLANK and _iBoardPosition is within bounds.
 	EInvalidMove AttemptMove(int _iBoardPosition, EPlayer _ePlayer);
@@ -80,13 +105,32 @@ public:
 	// Forces a move regardless if it's occuppied. Will fail if _iBoardPosition is out of bounds.
 	EInvalidMove ForceMove(int _iBoardPosition, EPlayer _ePlayer);
 
+	// Finds and makes the best possible move for the given player. 
+	// TODO: add a randomness value.
+	void MinMaxMove(EPlayer _ePlayer);
+
+	// Prints the tic tac toe board to the console.
+	void PrintToConsole();
+
 protected:
 private:
+	// These next three functions are made static as they do not manipulate or call on any 
+	// non-static member variables/functions. They are merely here to restrict their use to only
+	// from within the CBoardState class. 
+	//
+	// They're main purpose is in the optimization of MinMax() algorithm.
+
+	// Returns the score of the _krBoard state for the given _ePlayer.
+	static int MinMax(EPlayer _eBoard[s_kiBOARD_SIZE], EPlayer _ePlayer);
+
+	// Returns the winner, if there is one. If there is no winner this will return a blank.
+	static EPlayer GetWinner(const EPlayer _eBoard[s_kiBOARD_SIZE]);
+
+	// Returns true if the board has no empty or blank slots, false otherwise.
+	static bool IsFull(const EPlayer _eBoard[s_kiBOARD_SIZE]);
 
 	// Member Variables
 public:
-	static const int s_kiBOARD_COL = 3;
-	static const int s_kiBOARD_SIZE = s_kiBOARD_COL * s_kiBOARD_COL;
 protected:
 private:
 	EPlayer m_eBoard[s_kiBOARD_SIZE];	// The actual board.

@@ -1,9 +1,36 @@
-﻿Build started 14/03/2015 4:28:51 p.m..
+﻿Build started 15/03/2015 3:49:35 p.m..
      1>Project "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\SDLGameFramework.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"GameStd.h" /Fp"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\SDLGameFramework.pch" /Fo"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\\" /Fd"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\3rdParty\tinyxml\tinystr.cpp ..\GameBase\Sprite\Sprite.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yc"GameStd.h" /Fp"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\SDLGameFramework.pch" /Fo"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\\" /Fd"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\GameStd.cpp
+         GameStd.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Yu"GameStd.h" /Fp"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\SDLGameFramework.pch" /Fo"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\\" /Fd"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\3rdParty\tinyxml\tinystr.cpp ..\3rdParty\tinyxml\tinyxml.cpp ..\3rdParty\tinyxml\tinyxmlerror.cpp ..\3rdParty\tinyxml\tinyxmlparser.cpp ..\Events\EventData.cpp ..\Events\EventManager.cpp ..\GameBase\GameApp.cpp ..\GameBase\GameLogic.cpp ..\GameBase\Sprite\Sprite.cpp ..\GameObject\AnimationComponent.cpp ..\GameObject\DestroyAfterComponent.cpp ..\GameObject\GameObject.cpp ..\GameObject\ObjectComponent.cpp ..\GameObject\ObjectFactory.cpp ..\GameObject\PhysicsComponent.cpp ..\GameObject\PositionComponent.cpp ..\GameObject\RenderComponent.cpp ..\GameView\HumanView.cpp ..\GUI\Button.cpp ..\main.cpp ..\Physics\Physics.cpp ..\Renderer\Renderer.cpp ..\Utilities\Line.cpp ..\Utilities\Point.cpp ..\Utilities\Rect.cpp ..\Utilities\Utilities.cpp
          tinystr.cpp
+         tinyxml.cpp
+         tinyxmlerror.cpp
+         tinyxmlparser.cpp
+         EventData.cpp
+         EventManager.cpp
+         GameApp.cpp
+         GameLogic.cpp
          Sprite.cpp
+         AnimationComponent.cpp
+         DestroyAfterComponent.cpp
+         GameObject.cpp
+         ObjectComponent.cpp
+         ObjectFactory.cpp
+         PhysicsComponent.cpp
+         PositionComponent.cpp
+         RenderComponent.cpp
+         HumanView.cpp
+         Button.cpp
+         main.cpp
+         Compiling...
+         Physics.cpp
+         Renderer.cpp
+         Line.cpp
+         Point.cpp
+         Rect.cpp
+         Utilities.cpp
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Lib\Win32Release\SDLGameFramework.lib" /NOLOGO /LTCG "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\tinystr.obj"
          "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\tinyxml.obj"
@@ -24,6 +51,7 @@
          "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\RenderComponent.obj"
          "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\GameStd.obj"
          "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\HumanView.obj"
+         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Button.obj"
          "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\main.obj"
          "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Physics.obj"
          "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Release\Renderer.obj"
@@ -36,4 +64,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.89
+Time Elapsed 00:00:04.63

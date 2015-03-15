@@ -140,3 +140,29 @@ bool IsInside(const CRect& _krRectA, const CRect& _krRectB)
 	// We passed the test.
 	return true;
 }
+
+bool IsPointInside(const CRect& _krRect, const CPoint& _krPoint)
+{
+	if (_krPoint.m_iX < _krRect.m_iX) {
+	// _krPoint is outside on the left.
+		return false;
+	}
+	else if (_krPoint.m_iX > _krRect.m_iX + _krRect.m_iWidth) {
+	// _krPoint is outside on the right.
+		return false;
+	}
+	else if (_krPoint.m_iY < _krRect.m_iY) {
+	// _krPoint is outside on the top.
+		return false;
+	}
+	else if (_krPoint.m_iY > _krRect.m_iY + _krRect.m_iHeight) {
+	// _krPoint is outside on the bottom.
+		return false;
+	}
+	else {
+	// _krPoint is inside.
+		return true;
+	}
+
+	return true;
+}
