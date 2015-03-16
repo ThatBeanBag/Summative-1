@@ -105,7 +105,9 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\GameView\HumanView.cpp" />
-    <ClCompile Include="..\GUI\Button.cpp" />
+    <ClCompile Include="..\GUI\BasicGUI.cpp" />
+    <ClCompile Include="..\GUI\GUIButton.cpp" />
+    <ClCompile Include="..\GUI\GUIElement.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Physics\Physics.cpp" />
     <ClCompile Include="..\Renderer\Renderer.cpp" />
@@ -133,7 +135,9 @@
     <ClInclude Include="..\GameStd.h" />
     <ClInclude Include="..\GameView\GameView.h" />
     <ClInclude Include="..\GameView\HumanView.h" />
-    <ClInclude Include="..\GUI\Button.h" />
+    <ClInclude Include="..\GUI\BasicGUI.h" />
+    <ClInclude Include="..\GUI\GUIButton.h" />
+    <ClInclude Include="..\GUI\GUIElement.h" />
     <ClInclude Include="..\Physics\Physics.h" />
     <ClInclude Include="..\Renderer\Renderer.h" />
     <ClInclude Include="..\Utilities\Line.h" />

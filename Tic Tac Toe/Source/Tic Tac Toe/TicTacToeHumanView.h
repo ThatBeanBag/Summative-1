@@ -20,6 +20,7 @@
 // Library Includes
 
 // Local Includes
+#include "BoardState.h"
 
 class CTicTacToeHumanView : public CHumanView {
 	// Member Functions
@@ -28,7 +29,23 @@ public:
 	virtual ~CTicTacToeHumanView();
 
 	virtual void VUpdate(float _fDeltaTime);
+	virtual void VRender(float _fDeltaTime);
 	virtual bool VMsgProc(const CAppMsg& _krMsg);
+
+	// Delegates Functions
+	void MoveTopLeft();
+	void MoveTopMiddle();
+	void MoveTopRight();
+	void MoveMiddleLeft();
+	void MoveMiddleMiddle();
+	void MoveMiddleRight();
+	void MoveBottomLeft();
+	void MoveBottomMiddle();
+	void MoveBottomRight();
+	void StartOverComputer();
+	void StartOverPlayer();
+	void Unbeatable();
+	void Easy();
 protected:
 private:
 
@@ -37,10 +54,13 @@ public:
 protected:
 private:
 	CSprite m_background;
-	CSprite m_sprite;
-	CSprite m_sprite2;
-	CButton m_buttonTest;
-	CButton m_buttonTest2;
+	CSprite m_boardButton;
+	CSprite m_naughtSprite;
+	CSprite m_crossSprite;
+
+	std::vector<CButton> m_boardButtons;
+
+	CBoardState m_boardState;
 };
 
 #endif // __TICTACTOEHUMANVIEW_H__

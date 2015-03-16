@@ -119,6 +119,7 @@ void CGameApp::MsgProc(const SDL_Event& event)
 			break;
 		}
 
+		
 		case SDL_WINDOWEVENT: {
 			if(event.window.event == SDL_WINDOWEVENT_RESIZED) {
 				m_screenSize.m_iX = event.window.data1;
@@ -131,7 +132,6 @@ void CGameApp::MsgProc(const SDL_Event& event)
 		//==================================================================
 		// Input Events
 		//==================================================================
-
 		case SDL_MOUSEMOTION:		// Fall through.
 		case SDL_MOUSEBUTTONDOWN:	// Fall through.
 		case SDL_MOUSEBUTTONUP:		// Fall through.
@@ -139,9 +139,13 @@ void CGameApp::MsgProc(const SDL_Event& event)
 		case SDL_KEYUP: {
 			CAppMsg msg;
 
+			// Normal input event.
 			msg.type = event.type;
+
+			// Take motion event.
 			msg.x = event.motion.x;
 			msg.y = event.motion.y;
+
 			msg.button = event.button.button;
 			msg.keycode = event.key.keysym.sym;
 
@@ -171,6 +175,7 @@ void CGameApp::Update()
 	if(m_pGame) {
 		// Update the game logic.
 		m_pGame->VUpdate(m_fDeltaTime);
+		m_pGame->Render(m_fDeltaTime);
 	}
 
 	Render();

@@ -9,6 +9,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Source Files\EventData">
+      <UniqueIdentifier>{3c36d37f-a3cb-4c13-8a12-cd9cb7f85908}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\TicTacToeStd.cpp">
@@ -26,6 +29,9 @@
     <ClCompile Include="..\TicTacToeHumanView.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\EventData\EvtDataTicTacToeMove.cpp">
+      <Filter>Source Files\EventData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\TicTacToeStd.h">
@@ -42,6 +48,9 @@
     </ClInclude>
     <ClInclude Include="..\TicTacToeHumanView.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\EventData\EvtDataTicTacToeMove.h">
+      <Filter>Source Files\EventData</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

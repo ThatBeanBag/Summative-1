@@ -20,9 +20,6 @@
     <Filter Include="Source Files\GameView">
       <UniqueIdentifier>{00aa8064-e443-4b7f-aa2b-8c078c4c8b14}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Console">
-      <UniqueIdentifier>{61fa3b22-b6b8-483f-a194-083c09935afe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files\3rdParty">
       <UniqueIdentifier>{ba140ea8-9124-47ae-bc3a-308cec944479}</UniqueIdentifier>
     </Filter>
@@ -121,7 +118,13 @@
     <ClCompile Include="..\Utilities\Line.cpp">
       <Filter>Source Files\Utilities</Filter>
     </ClCompile>
-    <ClCompile Include="..\GUI\Button.cpp">
+    <ClCompile Include="..\GUI\BasicGUI.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GUI\GUIButton.cpp">
+      <Filter>Source Files\GUI</Filter>
+    </ClCompile>
+    <ClCompile Include="..\GUI\GUIElement.cpp">
       <Filter>Source Files\GUI</Filter>
     </ClCompile>
   </ItemGroup>
@@ -198,7 +201,13 @@
     <ClInclude Include="..\Utilities\Line.h">
       <Filter>Source Files\Utilities</Filter>
     </ClInclude>
-    <ClInclude Include="..\GUI\Button.h">
+    <ClInclude Include="..\GUI\BasicGUI.h">
+      <Filter>Source Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GUI\GUIButton.h">
+      <Filter>Source Files\GUI</Filter>
+    </ClInclude>
+    <ClInclude Include="..\GUI\GUIElement.h">
       <Filter>Source Files\GUI</Filter>
     </ClInclude>
   </ItemGroup>

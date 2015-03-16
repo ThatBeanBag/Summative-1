@@ -12,6 +12,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\BoardState.cpp" />
+    <ClCompile Include="..\EventData\EvtDataTicTacToeMove.cpp" />
     <ClCompile Include="..\TicTacToeApp.cpp" />
     <ClCompile Include="..\TicTacToeHumanView.cpp" />
     <ClCompile Include="..\TicTacToeLogic.cpp" />
@@ -22,6 +23,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\BoardState.h" />
+    <ClInclude Include="..\EventData\EvtDataTicTacToeMove.h" />
     <ClInclude Include="..\TicTacToeApp.h" />
     <ClInclude Include="..\TicTacToeHumanView.h" />
     <ClInclude Include="..\TicTacToeLogic.h" />

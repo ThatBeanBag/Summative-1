@@ -20,7 +20,6 @@
 // Library Includes
 
 // Local Includes
-#include "../../SDLGameFramework/Events/EventData.h"
 #include "../BoardState.h"
 
 class CEvtDataTicTacToe : public CIEventData {

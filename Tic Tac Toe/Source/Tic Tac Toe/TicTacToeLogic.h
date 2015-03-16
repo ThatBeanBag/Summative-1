@@ -49,8 +49,9 @@ public:
 protected:
 private:
 	CBoardState m_currentBoard;	// The current tic tac toe board.
-	bool m_bIsPlayersTurn;		// True if it's the players turn to play, false otherwise.
 	EPlayer m_ePlayer;			// Defines who the player is playing as.
+	bool m_bIsPlayersTurn;		// True if it's the players turn to play, false otherwise.
+	bool m_bIsAIUnbeatable;		// True if the ai is unbeatable.
 };
 
 #endif // __TICTACTOELOGIC_H__
