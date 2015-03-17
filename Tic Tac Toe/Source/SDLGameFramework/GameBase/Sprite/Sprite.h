@@ -33,7 +33,7 @@ class CSprite {
 	// Member Functions
 public:
 	CSprite();																// Default constructer.
-	CSprite(SDL_Surface* _pLoadedSprite, bool _bIsVisible = true);	// Normal constructer.
+	CSprite(SDL_Surface* _pLoadedSprite, const std::string& _krstrResource, bool _bIsVisible = true);	// Normal constructer.
 	CSprite(CSprite& _rSprite);					// Copy constructer.
 
 	~CSprite();			// Destroys the texture if there is one.
@@ -49,6 +49,8 @@ public:
 	CRect GetMask(int _iFrame = 0) const;
 	const std::vector<CRect>& GetAllMasks() const;
 
+	const std::string& GetResource() const;
+
 	void SetVisible(bool _bIsVisible);
 	bool IsVisible() const;
 
@@ -61,6 +63,7 @@ protected:
 private:
 	SDL_Texture* m_pSpriteSheet; 
 	std::vector<CRect> m_masks;	// The masks of the sprite for animations.
+	std::string m_strResource;	// The file path of this sprite.
 	bool m_bIsVisible;			// True if the image should be drawn to the screen, false if not.
 };
 

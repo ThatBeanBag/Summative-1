@@ -29,6 +29,13 @@
     <ClInclude Include="..\TicTacToeLogic.h" />
     <ClInclude Include="..\TicTacToeStd.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\..\Assets\GUI\AiSelectGUI.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\..\..\Assets\GUI\MainGUI.xml" />
+    <Xml Include="..\..\..\Assets\GUI\StartGUI.xml" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FC947D3C-AE2B-41CE-A51B-8F4C6F8C0D02}</ProjectGuid>
     <RootNamespace>TicTacToe</RootNamespace>

@@ -1,0 +1,78 @@
+<MainGUI resource="GUI/MainGUI.xml">
+	<Buttons>
+		<ButtonTL> 
+			<BoundingBox X = "73" Y = "100" Width = "160" Height = "160" Anchor = "TL" />
+			<Sprite Resource = "Images/Buttons/Board Button.png"/>
+			<Delegate Name = "CTicTacToeHumanView::MoveTopLeft"/>
+			<OutMask X = "0" Y = "0" Width = "160" Height = "160" />
+			<HoverMask X = "160" Y = "0" Width = "160" Height = "160" />
+		</ButtonTL>
+		
+		<ButtonTM> 
+			<BoundingBox X = "235" Y = "100" Width = "160" Height = "160" Anchor = "TL" />
+			<Sprite Resource = "Images/Buttons/Board Button.png"/>
+			<Delegate Name = "CTicTacToeHumanView::MoveTopMiddle"/>
+			<OutMask X = "0" Y = "0" Width = "160" Height = "160" />
+			<HoverMask X = "160" Y = "0" Width = "160" Height = "160" />
+		</ButtonTM>
+		
+		<ButtonTR> 
+			<BoundingBox X = "397" Y = "100" Width = "160" Height = "160" Anchor = "TL" />
+			<Sprite Resource = "Images/Buttons/Board Button.png"/>
+			<Delegate Name = "CTicTacToeHumanView::MoveTopRight"/>
+			<OutMask X = "0" Y = "0" Width = "160" Height = "160" />
+			<HoverMask X = "160" Y = "0" Width = "160" Height = "160" />
+		</ButtonTR>
+		
+		<ButtonML> 
+			<BoundingBox X = "73" Y = "262" Width = "160" Height = "160" Anchor = "TL" />
+			<Sprite Resource = "Images/Buttons/Board Button.png"/>
+			<Delegate Name = "CTicTacToeHumanView::MoveMiddleLeft"/>
+			<OutMask X = "0" Y = "0" Width = "160" Height = "160" />
+			<HoverMask X = "160" Y = "0" Width = "160" Height = "160" />
+		</ButtonML>
+		
+		<ButtonMM> 
+			<BoundingBox X = "235" Y = "262" Width = "160" Height = "160" Anchor = "TL" />
+			<Sprite Resource = "Images/Buttons/Board Button.png"/>
+			<Delegate Name = "CTicTacToeHumanView::MoveMiddleMiddle"/>
+			<OutMask X = "0" Y = "0" Width = "160" Height = "160" />
+			<HoverMask X = "160" Y = "0" Width = "160" Height = "160" />
+		</ButtonMM>
+		
+		<ButtonMR> 
+			<BoundingBox X = "397" Y = "262" Width = "160" Height = "160" Anchor = "TL" />
+			<Sprite Resource = "Images/Buttons/Board Button.png"/>
+			<Delegate Name = "CTicTacToeHumanView::MoveMiddleRight"/>
+			<OutMask X = "0" Y = "0" Width = "160" Height = "160" />
+			<HoverMask X = "160" Y = "0" Width = "160" Height = "160" />
+		</ButtonMR>
+		
+		<ButtonBL> 
+			<BoundingBox X = "73" Y = "424" Width = "160" Height = "160" Anchor = "TL" />
+			<Sprite Resource = "Images/Buttons/Board Button.png"/>
+			<Delegate Name = "CTicTacToeHumanView::MoveBottomLeft"/>
+			<OutMask X = "0" Y = "0" Width = "160" Height = "160" />
+			<HoverMask X = "160" Y = "0" Width = "160" Height = "160" />
+		</ButtonBL>
+		
+		<ButtonBM> 
+			<BoundingBox X = "235" Y = "424" Width = "160" Height = "160" Anchor = "TL" />
+			<Sprite Resource = "Images/Buttons/Board Button.png"/>
+			<Delegate Name = "CTicTacToeHumanView::MoveBottomMiddle"/>
+			<OutMask X = "0" Y = "0" Width = "160" Height = "160" />
+			<HoverMask X = "160" Y = "0" Width = "160" Height = "160" />
+		</ButtonBM>
+		
+		<ButtonBR> 
+			<BoundingBox X = "397" Y = "424" Width = "160" Height = "160" Anchor = "TL" />
+			<Sprite Resource = "Images/Buttons/Board Button.png"/>
+			<Delegate Name = "CTicTacToeHumanView::MoveBottomRight"/>
+			<OutMask X = "0" Y = "0" Width = "160" Height = "160" />
+			<HoverMask X = "160" Y = "0" Width = "160" Height = "160" />
+		</ButtonBR>
+	
+	</Buttons>
+	
+</MainGUI>
+	

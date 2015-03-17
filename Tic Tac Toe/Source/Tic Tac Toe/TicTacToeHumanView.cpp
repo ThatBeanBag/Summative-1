@@ -25,63 +25,39 @@
 
 CTicTacToeHumanView::CTicTacToeHumanView()
 {
-
-	// Load Sprites
+	// Load Sprites.
 	m_background = g_pApp->LoadSprite("Images/BackgroundImage.png");
-	m_boardButton = g_pApp->LoadSprite("Images/Buttons/Board Button.png");
 	m_naughtSprite = g_pApp->LoadSprite("Images/Naught.png");
 	m_crossSprite = g_pApp->LoadSprite("Images/Cross.png");
 
-	m_boardButton.AddMask(CRect(0, 0, 160, 160));
-	m_boardButton.AddMask(CRect(160, 0, 160, 160));
+	m_crossSprite.AddMask(CRect(0, 0, 90, 90));
+	m_naughtSprite.AddMask(CRect(0, 0, 90, 90));
 
-	int iWidth = 160;
-	int iHeight = 160;
-	int iOffset = 2;
-	int iStartX = 73;
-	int iStartY = 100;
-	int iX = iStartX;
-	int iY = iStartY;
+	// Register Delegates into the GUI.
+	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveTopLeft", MakeDelegate(this, &CTicTacToeHumanView::MoveTopLeft));
+	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveTopRight", MakeDelegate(this, &CTicTacToeHumanView::MoveTopRight));
+	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveMiddleLeft", MakeDelegate(this, &CTicTacToeHumanView::MoveMiddleLeft));
+	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveMiddleMiddle", MakeDelegate(this, &CTicTacToeHumanView::MoveMiddleMiddle));
+	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveMiddleRight", MakeDelegate(this, &CTicTacToeHumanView::MoveMiddleRight));
+	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveBottomLeft", MakeDelegate(this, &CTicTacToeHumanView::MoveBottomLeft));
+	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveBottomMiddle", MakeDelegate(this, &CTicTacToeHumanView::MoveBottomMiddle));
+	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveBottomRight", MakeDelegate(this, &CTicTacToeHumanView::MoveBottomRight));
+	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveTopMiddle", MakeDelegate(this, &CTicTacToeHumanView::MoveTopMiddle));
 
-	m_boardButtons.push_back(CButton(&m_boardButton, CRect(iX, iY, iWidth, iHeight), 
-		                     MakeDelegate(this, &CTicTacToeHumanView::MoveTopLeft)));
-	iX += iWidth + iOffset;
+	m_guiAi.RegisterDelegate("CTicTacToeHumanView::Unbeatable", MakeDelegate(this, &CTicTacToeHumanView::Unbeatable));
+	m_guiAi.RegisterDelegate("CTicTacToeHumanView::Easy", MakeDelegate(this, &CTicTacToeHumanView::Easy));
 
-	m_boardButtons.push_back(CButton(&m_boardButton, CRect(iX, iY, iWidth, iHeight),
-							 MakeDelegate(this, &CTicTacToeHumanView::MoveTopMiddle)));
-	iX += iWidth + iOffset;
+	m_guiStart.RegisterDelegate("CTicTacToeHumanView::StartOverComputer", MakeDelegate(this, &CTicTacToeHumanView::StartOverComputer));
+	m_guiStart.RegisterDelegate("CTicTacToeHumanView::StartOverPlayer", MakeDelegate(this, &CTicTacToeHumanView::StartOverPlayer));
 
-	m_boardButtons.push_back(CButton(&m_boardButton, CRect(iX, iY, iWidth, iHeight),
-							 MakeDelegate(this, &CTicTacToeHumanView::MoveTopRight)));
-	iX = iStartX;
-	iY += iHeight + iOffset;
+	// Load the GUIs from file.
+	m_guiBoard.LoadGUIFromFile("GUI/MainGUI.xml");
+	m_guiAi.LoadGUIFromFile("GUI/AiSelectGUI.xml");
+	m_guiStart.LoadGUIFromFile("GUI/StartGUI.xml");
 
-	m_boardButtons.push_back(CButton(&m_boardButton, CRect(iX, iY, iWidth, iHeight),
-							 MakeDelegate(this, &CTicTacToeHumanView::MoveMiddleLeft)));
-	iX += iWidth + iOffset;
-
-	m_boardButtons.push_back(CButton(&m_boardButton, CRect(iX, iY, iWidth, iHeight),
-							 MakeDelegate(this, &CTicTacToeHumanView::MoveMiddleMiddle)));
-	iX += iWidth + iOffset;
-
-	m_boardButtons.push_back(CButton(&m_boardButton, CRect(iX, iY, iWidth, iHeight),
-							 MakeDelegate(this, &CTicTacToeHumanView::MoveMiddleRight)));
-	iX = iStartX;
-	iY += iHeight + iOffset;
-
-	m_boardButtons.push_back(CButton(&m_boardButton, CRect(iX, iY, iWidth, iHeight),
-							 MakeDelegate(this, &CTicTacToeHumanView::MoveBottomLeft)));
-	iX += iWidth + iOffset;
-
-	m_boardButtons.push_back(CButton(&m_boardButton, CRect(iX, iY, iWidth, iHeight),
-							 MakeDelegate(this, &CTicTacToeHumanView::MoveBottomMiddle)));
-	iX += iWidth + iOffset;
-
-	m_boardButtons.push_back(CButton(&m_boardButton, CRect(iX, iY, iWidth, iHeight),
-							 MakeDelegate(this, &CTicTacToeHumanView::MoveBottomRight)));
-
-	// Computer makes first move.
-	m_boardState.MinMaxMove(eNAUGHT);
+	// Hide the ai and board GUIs.
+	m_guiAi.Hide();
+	m_guiBoard.Hide();
 }
 
 CTicTacToeHumanView::~CTicTacToeHumanView()
@@ -91,21 +67,34 @@ CTicTacToeHumanView::~CTicTacToeHumanView()
 
 void CTicTacToeHumanView::VUpdate(float _fDeltaTime)
 {
+	for (int i = 0; i < CBoardState::s_kiBOARD_SIZE && i < m_guiBoard.GetElements().size(); ++i) {
+		if (m_boardState[i] != eBLANK) {
+			m_guiBoard.GetElements()[i]->Hide();
+		}
+		else {
+			//m_guiBoard.GetElements()[i]->Show();
+		}
+	}
+
+	if (m_boardState.GetWinner() != eBLANK || m_boardState.IsFull()) {
+		m_guiBoard.Hide();
+		m_guiStart.Show();
+	}
 }
 
 void CTicTacToeHumanView::VRender(float _fDeltaTime)
 {
 	g_pApp->RenderSprite(m_background, 0, 0);
 
-	for (int i = 0; i < m_boardButtons.size(); ++i) {
-		if (m_boardState[i] == eBLANK) {
-			m_boardButtons[i].Render();
-		}
-	}
+	// Render the GUI.
+	m_guiStart.Render();
+	m_guiBoard.Render();
+	m_guiAi.Render();
 
-	int iStartX = 73 + 35;
-	int iStartY = 100 + 35;
-	int iOffset = 2 + 160;
+	int iStartX = 108;
+	int iStartY = 135;
+
+	int iOffset = 162;
 
 
 	for (int i = 0; i < CBoardState::s_kiBOARD_COL; ++i) {
@@ -113,10 +102,10 @@ void CTicTacToeHumanView::VRender(float _fDeltaTime)
 			CPoint position(iStartX + iOffset * i, iStartY + iOffset * j);
 
 			if (m_boardState[i + j * CBoardState::s_kiBOARD_COL] == eNAUGHT) {
-				g_pApp->RenderSprite(m_naughtSprite, position);
+				g_pApp->RenderSprite(m_naughtSprite, position, 1);
 			}
 			else if (m_boardState[i + j * CBoardState::s_kiBOARD_COL] == eCROSS) {
-				g_pApp->RenderSprite(m_crossSprite, position);
+				g_pApp->RenderSprite(m_crossSprite, position, 1);
 			}
 			else {
 			}
@@ -129,36 +118,20 @@ void CTicTacToeHumanView::VRender(float _fDeltaTime)
 
 bool CTicTacToeHumanView::VMsgProc(const CAppMsg& _krMsg)
 {
-	switch (_krMsg.type) {
-	case SDL_MOUSEMOTION: {
-		// Update the current mouse position.		
-		for (int i = 0; i < m_boardButtons.size(); ++i) {
-			m_boardButtons[i].OnMouseMove(CPoint(_krMsg.x, _krMsg.y));
-		}
+	bool bHandled = CHumanView::VMsgProc(_krMsg);
 
-		break;
+	// Let the GUI handle it's events.
+	if (m_guiStart.HandleEvents(_krMsg)) {
+		return true;
+	}
+	else if (m_guiBoard.HandleEvents(_krMsg)) {
+		return true;
+	}
+	else if (m_guiAi.HandleEvents(_krMsg)) {
+		return true;
 	}
 
-	case SDL_MOUSEBUTTONDOWN: {
-		if (_krMsg.button == SDL_BUTTON_LEFT) {
-		}
-
-		break;
-	}
-
-	case SDL_MOUSEBUTTONUP: {
-		if (_krMsg.button == SDL_BUTTON_LEFT) {
-			for (int i = 0; i < m_boardButtons.size(); ++i) {
-				m_boardButtons[i].OnRelease(m_cursorPosition);
-			}
-		}
-
-		break;
-	}
-	default:break;
-	}
-
-	return CHumanView::VMsgProc(_krMsg);
+	return bHandled;
 }
 
 // =====================================================
@@ -236,4 +209,34 @@ void CTicTacToeHumanView::MoveBottomRight()
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
 		m_boardState.MinMaxMove(eNAUGHT);
 	}
+}
+
+void CTicTacToeHumanView::StartOverComputer()
+{
+	m_guiStart.Hide();
+	m_guiAi.Show();
+
+	m_boardState = CBoardState();
+
+	m_boardState.MinMaxMove(eNAUGHT);
+}
+
+void CTicTacToeHumanView::StartOverPlayer()
+{
+	m_boardState = CBoardState();
+
+	m_guiStart.Hide();
+	m_guiAi.Show();
+}
+
+void CTicTacToeHumanView::Unbeatable() 
+{
+	m_guiAi.Hide();
+	m_guiBoard.Show();
+}
+
+void CTicTacToeHumanView::Easy()
+{
+	m_guiAi.Hide();
+	m_guiBoard.Show();
 }

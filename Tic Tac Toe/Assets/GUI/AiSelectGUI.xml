@@ -1,0 +1,28 @@
+<AiSelectGUI resource="GUI/AiSelectGUI.xml">
+	<Buttons>
+		<Easy> 
+			<BoundingBox X = "30" Y = "30" Width = "190" Height = "190" Anchor = "TR" />
+			<Sprite Resource = "Images/Buttons/Easy.png"/>
+			<Delegate Name = "CTicTacToeHumanView::Easy"/>
+			<OutMask X = "0" Y = "0" Width = "190" Height = "190" />
+			<HoverMask X = "190" Y = "0" Width = "190" Height = "190" />
+		</Easy>
+		
+		<Unbeatable> 
+			<BoundingBox X = "30" Y = "30" Width = "190" Height = "190" Anchor = "BR" />
+			<Sprite Resource = "Images/Buttons/Unbeatable.png"/>
+			<Delegate Name = "CTicTacToeHumanView::Unbeatable"/>
+			<OutMask X = "0" Y = "0" Width = "190" Height = "190" />
+			<HoverMask X = "190" Y = "0" Width = "190" Height = "190" />
+		</Unbeatable>
+	</Buttons>
+	
+	<Statics>
+		<HowDifficult>
+			<BoundingBox X = "48" Y = "329" Width = "171" Height = "22" Anchor = "TR" />
+			<Sprite Resource = "Images/Statics/How Difficult.png"/>
+		</HowDifficult>
+	</Statics>
+	
+</AiSelectGUI>
+	

@@ -67,6 +67,6 @@ extern const float g_kfINFINITY;
 #include "Utilities\Utilities.h"
 #include "Events\EventManager.h"
 #include "GameBase\GameApp.h"
-#include "GUI\GUIButton.h"
+#include "GUI\BasicGUI.h"
 
 #endif

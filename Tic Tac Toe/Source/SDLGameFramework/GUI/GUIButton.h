@@ -34,15 +34,15 @@ typedef fastdelegate::FastDelegate0<> TButtonDelegate;
 class CGUIButton : public CGUIElement {
 	// Member Functions
 public:
-	CGUIButton(CSprite* _pSprite, const CRect& _krRect, TButtonDelegate _delegate, EGUIAnchor _eAnchor = eTOP_LEFT);
+	CGUIButton(CSprite* _pSprite, const CRect& _krRect, const TButtonDelegate& _krDelegate, EGUIAnchor _eAnchor = eTOP_LEFT);
 	~CGUIButton();
+
+	// Draws the button to the screen.
+	virtual void VRender();
 
 	// Calls the delegate if _krCursorPosition is within the m_buttonRect rectangle.
 	// Checks to see if mouse is hovering over the button and changes the sprite mask appropriately.
-	virtual void HandleEvents(const CAppMsg& _krMsg);
-
-	// Draws the button to the screen.
-	virtual void VShow();
+	virtual bool VHandleEvents(const CAppMsg& _krMsg);
 protected:
 private:
 
@@ -53,7 +53,7 @@ private:
 	CSprite* m_pSprite;			// The image of the button.
 	TButtonDelegate m_delegate;	// The delegate to call if the button is clicked on.
 
-	CGUIButtonState m_eState;		// The state of the button (out, hover or pressed).
+	CGUIButtonState m_eState;	// The state of the button (out, hover or pressed).
 };
 
-#endif	// __BUTTON_H__
+#endif	// __GUIBUTTON_H__

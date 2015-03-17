@@ -1,0 +1,27 @@
+<StartGUI resource="GUI/AiSelectGUI.xml">
+	<Buttons>
+		<IllStart> 
+			<BoundingBox X = "30" Y = "30" Width = "190" Height = "190" Anchor = "TR" />
+			<Sprite Resource = "Images/Buttons/I'll start.png"/>
+			<Delegate Name = "CTicTacToeHumanView::StartOverPlayer"/>
+			<OutMask X = "0" Y = "0" Width = "190" Height = "190" />
+			<HoverMask X = "190" Y = "0" Width = "190" Height = "190" />
+		</IllStart>
+		
+		<YouStart> 
+			<BoundingBox X = "30" Y = "30" Width = "190" Height = "190" Anchor = "BR" />
+			<Sprite Resource = "Images/Buttons/You start.png"/>
+			<Delegate Name = "CTicTacToeHumanView::StartOverComputer"/>
+			<OutMask X = "0" Y = "0" Width = "190" Height = "190" />
+			<HoverMask X = "190" Y = "0" Width = "190" Height = "190" />
+		</YouStart>
+	</Buttons>
+	
+	<Statics>
+		<HowDifficult>
+			<BoundingBox X = "48" Y = "329" Width = "171" Height = "22" Anchor = "TR" />
+			<Sprite Resource = "Images/Statics/Who Starts.png"/>
+		</HowDifficult>
+	</Statics>
+	
+</StartGUI>

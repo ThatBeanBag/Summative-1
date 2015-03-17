@@ -234,7 +234,7 @@ CSprite CGameApp::LoadSprite(const std::string& _krstrFileName)
 	else {
 	// Successul load.
 		// Create and return the sprite.
-		return CSprite(pLoadedImage);
+		return CSprite(pLoadedImage, _krstrFileName);
 	}
 
 	// Free the surface, as it is no longer needed.

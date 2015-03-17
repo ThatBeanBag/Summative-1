@@ -12,6 +12,9 @@
     <Filter Include="Source Files\EventData">
       <UniqueIdentifier>{3c36d37f-a3cb-4c13-8a12-cd9cb7f85908}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GUI%27s">
+      <UniqueIdentifier>{689f0e78-54cc-4c2f-810d-e3262c81a870}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\TicTacToeStd.cpp">
@@ -52,5 +55,16 @@
     <ClInclude Include="..\EventData\EvtDataTicTacToeMove.h">
       <Filter>Source Files\EventData</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="..\..\..\Assets\GUI\StartGUI.xml">
+      <Filter>Source Files\GUI%27s</Filter>
+    </Xml>
+    <Xml Include="..\..\..\Assets\GUI\AiSelectGUI.xml">
+      <Filter>Source Files\GUI%27s</Filter>
+    </Xml>
+    <Xml Include="..\..\..\Assets\GUI\MainGUI.xml">
+      <Filter>Source Files\GUI%27s</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

@@ -22,10 +22,10 @@
 
 // Local Includes
 
-CGUIButton::CGUIButton(CSprite* _pSprite, const CRect& _krRect, TButtonDelegate _delegate, EGUIAnchor _eAnchor)
+CGUIButton::CGUIButton(CSprite* _pSprite, const CRect& _krRect, const TButtonDelegate& _krDelegate, EGUIAnchor _eAnchor)
 	:CGUIElement(_krRect, _eAnchor),
 	m_pSprite(_pSprite),
-	m_delegate(_delegate),
+	m_delegate(_krDelegate),
 	m_eState(eOUT)
 {
 
@@ -36,8 +36,39 @@ CGUIButton::~CGUIButton()
 
 }
 
-void CGUIButton::HandleEvents(const CAppMsg& _krMsg)
+void CGUIButton::VRender()
 {
+	if (!m_bIsShown) {
+		// Don't show if this button is not enabled.
+		return;
+	}
+
+	int iFrame = 0;
+
+	if (m_eState == eOUT) {
+		iFrame = 1;
+	}
+	else if (m_eState == eHOVER) {
+		iFrame = 2;
+	}
+	else if (m_eState == ePRESSED) {
+		iFrame = 3;
+	}
+
+	if (iFrame >= static_cast<int>(m_pSprite->GetAllMasks().size())) {
+		iFrame = m_pSprite->GetAllMasks().size() - 1;
+	}
+
+	g_pApp->RenderSprite(*m_pSprite, GetWorldPosition(), iFrame);
+}
+
+bool CGUIButton::VHandleEvents(const CAppMsg& _krMsg)
+{
+	// Don't handle events if this button is not shown.
+	if (!m_bIsShown) {
+		return false;
+	}
+
 	CPoint cursorPosition(_krMsg.x, _krMsg.y);
 
 	switch (_krMsg.type) {
@@ -50,6 +81,7 @@ void CGUIButton::HandleEvents(const CAppMsg& _krMsg)
 		}
 		else {
 			// Keep the state as ePRESSED, we don't want to overwrite it.
+
 		}
 
 		break;
@@ -67,31 +99,14 @@ void CGUIButton::HandleEvents(const CAppMsg& _krMsg)
 		if (IsPointInside(GetWorldRect(), cursorPosition)) {
 			// Call the delegate.
 			m_delegate();
+
+			return true;
 		}
 
 		break;
 	}
 	default:break;
 	}
-}
 
-void CGUIButton::VShow()
-{
-	int iFrame = 0;
-
-	if (m_eState == eOUT) {
-		iFrame = 1;
-	}
-	else if (m_eState == eHOVER) {
-		iFrame = 2;
-	}
-	else if (m_eState == ePRESSED) {
-		iFrame = 3;
-	}
-
-	if (iFrame >= m_pSprite->GetAllMasks().size()) {
-		iFrame = m_pSprite->GetAllMasks().size() - 1;
-	}
-
-	g_pApp->RenderSprite(*m_pSprite, GetWorldPosition(), iFrame);
+	return false;
 }

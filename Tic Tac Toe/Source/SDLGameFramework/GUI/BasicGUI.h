@@ -21,34 +21,44 @@
 
 // Local Includes
 #include "GUIButton.h"
+#include "GUIStatic.h"
 
 class CBasicGUI {
+	typedef std::map<std::string, TButtonDelegate> TDelegateMap;
+
 	// Member Functions
 public:
 	CBasicGUI();
 	~CBasicGUI();
 
-	// Calls OnPressed() for all buttons and statics in the GUI.
-	void OnPressed(const CPoint& _krCursorPosition);
+	// Register a delegate so that it can be assigned to buttons through it's name only. 
+	// The delegate must be registered before the LoadGUIFromFile() functions is called, otherwise
+	// it will fail to load.
+	// The _krDelegateName should always be Class::Function.
+	void RegisterDelegate(const std::string& _krDelegateName, const TButtonDelegate& _krDelegate);
 
-	// Calls OnRelease() for all buttons and statics in the GUI.
-	void OnRelease(const CPoint& _krCursorPosition);
+	// Loads the ui from a file 
+	bool LoadGUIFromFile(const std::string& _strFilePath);
 
-	// Calls OnMouseMove() for all buttons and statics in the GUI.
-	void OnMouseMove(const CPoint& _krCursorPosition);
+	bool HandleEvents(const CAppMsg& _krMsg);
+	void Render();
 
-	// Calls OnScreenResize for all buttons and statics in the GUI.
-	void OnScreenResize(const CPoint& _krNewSize);
+	void Hide();
+	void Show();
+
+	const std::vector<CGUIElement*> GetElements();
 protected:
 private:
+	bool LoadButtonFromFile(TiXmlElement* _pXmlData);
+	bool LoadStaticFromFile(TiXmlElement* _pXmlData);
 
 	// Member Variables
 public:
 protected:
+	std::vector<CGUIElement*> m_guiElements;
+	std::vector<CSprite*> m_guiSprites;
+	TDelegateMap m_delegateMap;
 private:
-	std::vector<CGUIButton> m_buttons;
-	std::vector<CGUIStatic> m_statics;
-	std::vector<CSprite> m_sprites;
 };
 
 #endif // __BASICGUI_H__

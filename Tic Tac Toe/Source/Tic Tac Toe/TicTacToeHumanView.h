@@ -54,11 +54,11 @@ public:
 protected:
 private:
 	CSprite m_background;
-	CSprite m_boardButton;
 	CSprite m_naughtSprite;
 	CSprite m_crossSprite;
-
-	std::vector<CButton> m_boardButtons;
+	CBasicGUI m_guiBoard;
+	CBasicGUI m_guiAi;
+	CBasicGUI m_guiStart;
 
 	CBoardState m_boardState;
 };

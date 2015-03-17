@@ -108,6 +108,7 @@
     <ClCompile Include="..\GUI\BasicGUI.cpp" />
     <ClCompile Include="..\GUI\GUIButton.cpp" />
     <ClCompile Include="..\GUI\GUIElement.cpp" />
+    <ClCompile Include="..\GUI\GUIStatic.cpp" />
     <ClCompile Include="..\main.cpp" />
     <ClCompile Include="..\Physics\Physics.cpp" />
     <ClCompile Include="..\Renderer\Renderer.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="..\GUI\BasicGUI.h" />
     <ClInclude Include="..\GUI\GUIButton.h" />
     <ClInclude Include="..\GUI\GUIElement.h" />
+    <ClInclude Include="..\GUI\GUIStatic.h" />
     <ClInclude Include="..\Physics\Physics.h" />
     <ClInclude Include="..\Renderer\Renderer.h" />
     <ClInclude Include="..\Utilities\Line.h" />

@@ -29,8 +29,9 @@ CSprite::CSprite()
 
 }
 
-CSprite::CSprite(SDL_Surface* _pLoadedSprite, bool _bIsVisible)
-	:m_bIsVisible(_bIsVisible)
+CSprite::CSprite(SDL_Surface* _pLoadedSprite, const std::string& _krstrResource, bool _bIsVisible)
+	:m_strResource(_krstrResource),
+	m_bIsVisible(_bIsVisible)
 {
 	if(_pLoadedSprite) {
 		m_pSpriteSheet = SDL_CreateTextureFromSurface(g_pApp->GetRenderer(), _pLoadedSprite);
@@ -45,8 +46,9 @@ CSprite::CSprite(SDL_Surface* _pLoadedSprite, bool _bIsVisible)
 CSprite::CSprite(CSprite& _rSprite)
 {
 	m_pSpriteSheet = _rSprite.Release();
-	m_bIsVisible = _rSprite.IsVisible();
 	m_masks = _rSprite.GetAllMasks();
+	m_strResource = _rSprite.GetResource();
+	m_bIsVisible = _rSprite.IsVisible();
 }
 
 CSprite::~CSprite()
@@ -61,8 +63,9 @@ CSprite::~CSprite()
 CSprite& CSprite::operator=(CSprite& _rSprite)
 {
 	m_pSpriteSheet = _rSprite.Release();
-	m_bIsVisible = _rSprite.IsVisible();
 	m_masks = _rSprite.GetAllMasks();
+	m_strResource = _rSprite.GetResource();
+	m_bIsVisible = _rSprite.IsVisible();
 
 	return *this;
 }
@@ -101,6 +104,11 @@ CRect CSprite::GetMask(int _iFrame) const
 const std::vector<CRect>& CSprite::GetAllMasks() const
 {
 	return m_masks;
+}
+
+const std::string& CSprite::GetResource() const
+{
+	return m_strResource;
 }
 
 void CSprite::SetVisible(bool _bIsVisible)

@@ -36,6 +36,7 @@ enum EGUIAnchor {
 class CGUIElement {
 	// Member Functions
 public:
+	CGUIElement();
 	CGUIElement(const CRect& _krBoundingBox, EGUIAnchor _eAnchor = eTOP_LEFT);
 	CGUIElement(int _iBoxX, int _iBoxY, int _iBoxWidth = 0, int _iBoxHeight = 0, EGUIAnchor _eAnchor = eTOP_LEFT);
 
@@ -45,19 +46,23 @@ public:
 
 	~CGUIElement();
 
-	// Handles only the positional events of a GUIElement such as screen resize.
-	// Derived classes should define this differently and then call this version.
-	virtual void VHandleEvents(const CAppMsg& _krMsg);
-
 	// Presents the GUI element to the screen. This is done usually with a call to the application layer.
-	// Derived classes must implement this, if they are to be non-abstract even if they leave it empty (as some might).
-	virtual void VShow() = 0;
+	// Derived classes must implement this if they are to be non-abstract even if they leave it empty (as some might).
+	virtual void VRender() = 0;
+
+	virtual bool VHandleEvents(const CAppMsg& _krMsg);
+
+	// Sets m_bIsShown to true, allowing the element to handle events and presented to the screen.
+	void Show();
+	// Makes the element inactive, disallowing it from handling events and being presented to the screen.
+	void Hide();
 
 	// Retrieves the position of the GUI element in relation to the world, instead of in relation to it's anchor.
 	CPoint GetWorldPosition() const;
 
 	// Retrieves the bounding box of the GUI element in relation to the world, instead of in relation to it's anchor.
 	CRect GetWorldRect() const;
+
 protected:
 private:
 
@@ -69,7 +74,7 @@ protected:
 							// on the screen.
 	EGUIAnchor m_eAnchor;	// Defines where to anchor the position of the button from.
 
-	bool m_bIsEnabled;		// True if the element should handle events and be shown.
+	bool m_bIsShown;		// True if the element should handle events and be shown.
 private:
 };
 

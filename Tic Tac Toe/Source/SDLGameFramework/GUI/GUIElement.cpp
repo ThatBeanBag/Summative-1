@@ -22,23 +22,33 @@
 
 // Local Includes
 
+CGUIElement::CGUIElement()
+	:m_bIsShown(true),
+	m_eAnchor(eTOP_LEFT)
+{
+
+}
+
 CGUIElement::CGUIElement(const CRect& _krBoundingBox, EGUIAnchor _eAnchor)
 	:m_boundingBox(_krBoundingBox),
-	m_eAnchor(_eAnchor)
+	m_eAnchor(_eAnchor),
+	m_bIsShown(true)
 {
 
 }
 
 CGUIElement::CGUIElement(int _iBoxX, int _iBoxY, int _iBoxWidth, int _iBoxHeight, EGUIAnchor _eAnchor)
 	:m_boundingBox(CRect(_iBoxX, _iBoxY, _iBoxWidth, _iBoxHeight)),
-	m_eAnchor(_eAnchor)
+	m_eAnchor(_eAnchor),
+	m_bIsShown(true)
 {
 
 }
 
 CGUIElement::CGUIElement(const CPoint& _krPosition, EGUIAnchor _eAnchor)
 	:m_boundingBox(CRect(_krPosition.m_iX, _krPosition.m_iY, 0, 0)),
-	m_eAnchor(_eAnchor)
+	m_eAnchor(_eAnchor),
+	m_bIsShown(true)
 {
 
 }
@@ -48,9 +58,19 @@ CGUIElement::~CGUIElement()
 
 }
 
-void CGUIElement::VHandleEvents(const CAppMsg& _krMsg)
+bool CGUIElement::VHandleEvents(const CAppMsg& _krMsg)
 {
+	return false;
+}
 
+void CGUIElement::Show()
+{
+	m_bIsShown = true;
+}
+
+void CGUIElement::Hide()
+{
+	m_bIsShown = false;
 }
 
 CPoint CGUIElement::GetWorldPosition() const 
