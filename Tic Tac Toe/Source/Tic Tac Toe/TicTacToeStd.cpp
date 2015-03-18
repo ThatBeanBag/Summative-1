@@ -23,3 +23,5 @@
 
 const int g_kiTICTACTOE_SCREEN_WIDTH = 840;
 const int g_kiTICTACTOE_SCREEN_HEIGHT = 680;
+
+const float g_kfCHANCE_OF_EASY_AI = 0.35f;

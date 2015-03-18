@@ -53,9 +53,9 @@ public:
 	virtual bool VHandleEvents(const CAppMsg& _krMsg);
 
 	// Sets m_bIsShown to true, allowing the element to handle events and presented to the screen.
-	void Show();
+	virtual void VShow();
 	// Makes the element inactive, disallowing it from handling events and being presented to the screen.
-	void Hide();
+	virtual void VHide();
 
 	// Retrieves the position of the GUI element in relation to the world, instead of in relation to it's anchor.
 	CPoint GetWorldPosition() const;

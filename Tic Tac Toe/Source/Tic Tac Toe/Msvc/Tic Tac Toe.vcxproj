@@ -34,7 +34,10 @@
       <SubType>Designer</SubType>
     </Xml>
     <Xml Include="..\..\..\Assets\GUI\MainGUI.xml" />
-    <Xml Include="..\..\..\Assets\GUI\StartGUI.xml" />
+    <Xml Include="..\..\..\Assets\GUI\StartGUI.xml">
+      <SubType>Designer</SubType>
+    </Xml>
+    <Xml Include="..\..\..\Assets\GUI\StartOverGUI.xml" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{FC947D3C-AE2B-41CE-A51B-8F4C6F8C0D02}</ProjectGuid>

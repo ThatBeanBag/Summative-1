@@ -56,11 +56,18 @@ private:
 	CSprite m_background;
 	CSprite m_naughtSprite;
 	CSprite m_crossSprite;
+	CSprite m_youWinSprite;
+	CSprite m_youLoseSprite;
+	CSprite m_drawSprite;
 	CBasicGUI m_guiBoard;
 	CBasicGUI m_guiAi;
 	CBasicGUI m_guiStart;
+	CBasicGUI m_guiStartOver;
 
 	CBoardState m_boardState;
+
+	bool m_bComputerStart;
+	bool m_bIsComputerEasy;
 };
 
 #endif // __TICTACTOEHUMANVIEW_H__

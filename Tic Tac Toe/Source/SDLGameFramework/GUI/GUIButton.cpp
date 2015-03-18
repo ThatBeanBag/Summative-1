@@ -73,34 +73,34 @@ bool CGUIButton::VHandleEvents(const CAppMsg& _krMsg)
 
 	switch (_krMsg.type) {
 	case SDL_MOUSEMOTION: {
-		if (IsPointInside(GetWorldRect(), cursorPosition)) {
+		if (IsPointInside(GetWorldRect(), cursorPosition) && m_eState != ePRESSED) {
 			m_eState = eHOVER;
 		}
-		else if (m_eState != ePRESSED) {
-			m_eState = eOUT;
-		}
 		else {
-			// Keep the state as ePRESSED, we don't want to overwrite it.
-
+			m_eState = eOUT;
 		}
 
 		break;
 	}
 
 	case SDL_MOUSEBUTTONDOWN: {
-		if (IsPointInside(GetWorldRect(), cursorPosition)) {
-			m_eState = ePRESSED;
+		if (_krMsg.button == SDL_BUTTON_LEFT) {
+			if (IsPointInside(GetWorldRect(), cursorPosition)) {
+				m_eState = ePRESSED;
+			}
 		}
 
 		break;
 	}
 
 	case SDL_MOUSEBUTTONUP: {
-		if (IsPointInside(GetWorldRect(), cursorPosition)) {
-			// Call the delegate.
-			m_delegate();
+		if (_krMsg.button == SDL_BUTTON_LEFT) {
+			if (IsPointInside(GetWorldRect(), cursorPosition)) {
+				// Call the delegate.
+				m_delegate();
 
-			return true;
+				return true;
+			}
 		}
 
 		break;
@@ -109,4 +109,11 @@ bool CGUIButton::VHandleEvents(const CAppMsg& _krMsg)
 	}
 
 	return false;
+}
+
+void CGUIButton::VHide()
+{
+	CGUIElement::VHide();
+
+	m_eState = eOUT;
 }

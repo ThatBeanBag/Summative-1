@@ -66,5 +66,8 @@
     <Xml Include="..\..\..\Assets\GUI\MainGUI.xml">
       <Filter>Source Files\GUI%27s</Filter>
     </Xml>
+    <Xml Include="..\..\..\Assets\GUI\StartOverGUI.xml">
+      <Filter>Source Files\GUI%27s</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

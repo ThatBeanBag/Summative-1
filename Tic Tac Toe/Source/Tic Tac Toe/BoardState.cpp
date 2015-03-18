@@ -136,7 +136,7 @@ EInvalidMove CBoardState::ForceMove(int _iBoardPosition, EPlayer _ePlayer)
 	return eVALID;
 }
 
-void CBoardState::MinMaxMove(EPlayer _ePlayer)
+void CBoardState::MinMaxMove(EPlayer _ePlayer, float _fChanceOfRandomMove)
 {
 	// We can optimize this in such a way that the first move is hard coded.
 	// The first move will always take ~9 times the amount of the second move.
@@ -144,41 +144,74 @@ void CBoardState::MinMaxMove(EPlayer _ePlayer)
 	// To win the first move will always be in a corner no matter what, it
 	// doesn't matter which corner (any will do).
 
-	int iScore = -2;	// Losing is better than not making a move.
-	int iMove = -1;
+	// Get a random number between 0 and 1.
+	double dRand = rand() / static_cast<double>(RAND_MAX + 1);
 
+	if (dRand < _fChanceOfRandomMove) {
+		PerformRandomMove(_ePlayer);
+	}
+	else {
+		int iScore = -2;	// Losing is better than not making a move.
+		int iMove = -1;
+
+		for (int i = 0; i < s_kiBOARD_SIZE; ++i) {
+			if (m_eBoard[i] == eBLANK) {
+				// Is this space empty?
+				EPlayer eNext;	// The player who will player after this move.
+
+				if (_ePlayer == eNAUGHT) {
+					eNext = eCROSS;
+				}
+				else if (_ePlayer == eCROSS) {
+					eNext = eNAUGHT;
+				}
+				else {
+					// There is no blank player, thus we need no make a move.
+					assert(false); // We should never get to this branch, a eBLANK has been passed.
+					return;
+				}
+
+				m_eBoard[i] = _ePlayer;
+
+				int iAttemptScore = -MinMax(m_eBoard, eNext);
+
+				if (iAttemptScore > iScore) {
+					iScore = iAttemptScore;
+					iMove = i;
+				}
+
+				// Reset the state back to blank after attempt.
+				m_eBoard[i] = eBLANK;
+			}
+		}
+
+		m_eBoard[iMove] = _ePlayer;
+	}
+}
+
+bool CBoardState::PerformRandomMove(EPlayer _ePlayer)
+{
+	if (IsFull()) {
+	// The board is full we can't make a move here.
+		return false;
+	}
+
+	std::vector<int> vecMovesLeft;
+
+	// Get all the moves the left to be made.
 	for (int i = 0; i < s_kiBOARD_SIZE; ++i) {
 		if (m_eBoard[i] == eBLANK) {
-		// Is this space empty?
-			EPlayer eNext;	// The player who will player after this move.
-
-			if (_ePlayer == eNAUGHT) {
-				eNext = eCROSS;
-			}
-			else if (_ePlayer == eCROSS) {
-				eNext = eNAUGHT;
-			}
-			else {
-				// There is no blank player, thus we need no make a move.
-				assert(false); // We should never get to this branch, a eBLANK has been passed.
-				return;
-			}
-
-			m_eBoard[i] = _ePlayer;
-
-			int iAttemptScore = -MinMax(m_eBoard, eNext);
-
-			if (iAttemptScore > iScore) {
-				iScore = iAttemptScore;
-				iMove = i;
-			}
-
-			// Reset the state back to blank after attempt.
-			m_eBoard[i] = eBLANK;
+			vecMovesLeft.push_back(i);
 		}
 	}
 
-	m_eBoard[iMove] = _ePlayer;
+	// Get a random move.
+	int iRandomMove = GetRandomNumber(0, vecMovesLeft.size());
+
+	// Make that move.
+	m_eBoard[vecMovesLeft[iRandomMove]] = _ePlayer;
+
+	return true;
 }
 
 void CBoardState::PrintToConsole()
@@ -248,6 +281,62 @@ int CBoardState::MinMax(EPlayer _eBoard[s_kiBOARD_SIZE], EPlayer _ePlayer)
 
 				if (iAttemptScore > iScore) {
 					iScore = iAttemptScore;
+				}
+
+				// Reset the state back to blank after attempt.
+				_eBoard[i] = eBLANK;
+			}
+		}
+
+		return iScore;
+	}
+}
+
+int CBoardState::MinMaxAlphaBeta(EPlayer _eBoard[s_kiBOARD_SIZE], int _iAlpha, int _iBeta, EPlayer _ePlayer)
+{
+	EPlayer eWinner = GetWinner(_eBoard);
+
+	if (eWinner != eBLANK) {
+		return static_cast<int>(_ePlayer * eWinner);
+	}
+	else if (IsFull(_eBoard)) {
+		// The board is full and there is no winner. This means it's a draw.
+		// Return the score corresponding to a draw (0).
+		return static_cast<int>(eBLANK);
+	}
+	else {
+		int iScore = -2;	// Not making a move is worse than losing.
+
+		for (int i = 0; i < s_kiBOARD_SIZE; ++i) {
+			if (_eBoard[i] == eBLANK) {
+				// Is this space empty?
+				EPlayer eNext;	// The player who will player after this move.
+
+				if (_ePlayer == eNAUGHT) {
+					eNext = eCROSS;
+				}
+				else if (_ePlayer == eCROSS) {
+					eNext = eNAUGHT;
+				}
+				else {
+					// There is no blank player, thus we need no make a move.
+					assert(false);	// We should never get to this branch, a eBLANK has been passed.
+					return iScore;
+				}
+
+				// Perform the move on the next board state.
+				_eBoard[i] = _ePlayer;
+
+				int iScore = -MinMaxAlphaBeta(_eBoard, _iAlpha, _iBeta, eNext);
+
+				_iAlpha = max(iScore, _iAlpha);
+				_iBeta = min(iScore, _iBeta);
+
+				if (_iBeta <= _iAlpha) {
+					// Reset the state back to blank after attempt.
+					_eBoard[i] = eBLANK;
+
+					break;
 				}
 
 				// Reset the state back to blank after attempt.

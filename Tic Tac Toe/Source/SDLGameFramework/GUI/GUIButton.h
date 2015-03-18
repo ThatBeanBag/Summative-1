@@ -43,6 +43,10 @@ public:
 	// Calls the delegate if _krCursorPosition is within the m_buttonRect rectangle.
 	// Checks to see if mouse is hovering over the button and changes the sprite mask appropriately.
 	virtual bool VHandleEvents(const CAppMsg& _krMsg);
+
+	// Calls CGUIElement::VHide() aswell as setting the state of the button to OUT, thus when it is shown
+	// again it will be on the correct state.
+	virtual void VHide();
 protected:
 private:
 

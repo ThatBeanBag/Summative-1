@@ -63,12 +63,12 @@ bool CGUIElement::VHandleEvents(const CAppMsg& _krMsg)
 	return false;
 }
 
-void CGUIElement::Show()
+void CGUIElement::VShow()
 {
 	m_bIsShown = true;
 }
 
-void CGUIElement::Hide()
+void CGUIElement::VHide()
 {
 	m_bIsShown = false;
 }

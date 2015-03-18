@@ -19,7 +19,7 @@
 	
 	<Statics>
 		<HowDifficult>
-			<BoundingBox X = "48" Y = "329" Width = "171" Height = "22" Anchor = "TR" />
+			<BoundingBox X = "40" Y = "329" Width = "171" Height = "22" Anchor = "TR" />
 			<Sprite Resource = "Images/Statics/Who Starts.png"/>
 		</HowDifficult>
 	</Statics>

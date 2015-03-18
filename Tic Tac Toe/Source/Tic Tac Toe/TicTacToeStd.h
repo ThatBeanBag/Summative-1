@@ -25,4 +25,6 @@
 extern const int g_kiTICTACTOE_SCREEN_WIDTH;
 extern const int g_kiTICTACTOE_SCREEN_HEIGHT;
 
+extern const float g_kfCHANCE_OF_EASY_AI;	// The chance that the easy Ai will make a random move.
+
 #endif	// __TICTACTOESTD_H__

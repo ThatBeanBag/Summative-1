@@ -1,8 +1,11 @@
-﻿Build started 17/03/2015 10:21:06 p.m..
+﻿Build started 18/03/2015 8:04:53 p.m..
      1>Project "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\SDLGameFramework.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"GameStd.h" /Fp"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\SDLGameFramework.pch" /Fo"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\\" /Fd"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\GUI\GUIButton.cpp
-         GUIButton.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"GameStd.h" /Fp"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\SDLGameFramework.pch" /Fo"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\\" /Fd"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\GameBase\GameApp.cpp ..\main.cpp
+         main.cpp
+     1>c:\users\playtech\documents\mediadesignschool\year 2\p01 - artificial intelligence\summative-1\tic tac toe\source\sdlgameframework\main.cpp(26): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+         GameApp.cpp
+         Generating Code...
        Lib:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Lib\Win32Debug\SDLGameFramework.lib" /NOLOGO "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinystr.obj"
          "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinyxml.obj"
@@ -39,4 +42,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:00.45
+Time Elapsed 00:00:00.50

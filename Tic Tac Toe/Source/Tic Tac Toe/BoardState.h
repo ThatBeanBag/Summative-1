@@ -62,7 +62,7 @@ enum EInvalidMove {
 // The CBoardState class encapsulates the representation and 
 // implementation of the tic tac toe board.
 //
-// The board is stored contigously in memory with a size of N * N.
+// The board is stored contiguously in memory with a size of N * N.
 //
 // You can imagine a 3 x 3 board like so:
 // 
@@ -106,11 +106,17 @@ public:
 	// Forces a move regardless if it's occuppied. Will fail if _iBoardPosition is out of bounds.
 	EInvalidMove ForceMove(int _iBoardPosition, EPlayer _ePlayer);
 
-	// Finds and makes the best possible move for the given player. 
-	// TODO: add a randomness value.
-	void MinMaxMove(EPlayer _ePlayer);
+	// Finds and makes the best possible move for the given player
+	// _fChanceOfRandomMove defines the chance, in decimal form, for MinMaxMove() to choose randomly
+	// instead of picking the best possible move. If _fChanceOfRandomMove >= 1 this will always
+	// make a random move.
+	void MinMaxMove(EPlayer _ePlayer, float _fChanceOfRandomMove = 0);
 
-	// Prints the tic tac toe board to the console.
+	// Makes a psuedo-random move for the given player if the board is not full, otherwise it will
+	// just return false.
+	bool PerformRandomMove(EPlayer _ePlayer);
+
+	// Prints the tic tac toe board to the console. Useful for quick debugging.
 	void PrintToConsole();
 
 protected:
@@ -124,6 +130,8 @@ private:
 	// Returns the score of the _krBoard state for the given _ePlayer.
 	static int MinMax(EPlayer _eBoard[s_kiBOARD_SIZE], EPlayer _ePlayer);
 
+	static int MinMaxAlphaBeta(EPlayer _eBoard[s_kiBOARD_SIZE], int _iAlpha, int _iBeta, EPlayer _ePlayer);
+
 	// Returns the winner, if there is one. If there is no winner this will return a blank.
 	static EPlayer GetWinner(const EPlayer _eBoard[s_kiBOARD_SIZE]);
 
@@ -134,7 +142,7 @@ private:
 public:
 protected:
 private:
-	EPlayer m_eBoard[s_kiBOARD_SIZE];	// The actual board.
+	EPlayer m_eBoard[s_kiBOARD_SIZE];	// The actual representation of the board.
 };
 
 #endif	// __BOARDSTATE_H__

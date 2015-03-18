@@ -31,7 +31,10 @@ CTicTacToeHumanView::CTicTacToeHumanView()
 	m_crossSprite = g_pApp->LoadSprite("Images/Cross.png");
 
 	m_crossSprite.AddMask(CRect(0, 0, 90, 90));
+	m_crossSprite.AddMask(CRect(90, 0, 90, 90));
+
 	m_naughtSprite.AddMask(CRect(0, 0, 90, 90));
+	m_naughtSprite.AddMask(CRect(90, 0, 90, 90));
 
 	// Register Delegates into the GUI.
 	m_guiBoard.RegisterDelegate("CTicTacToeHumanView::MoveTopLeft", MakeDelegate(this, &CTicTacToeHumanView::MoveTopLeft));
@@ -50,14 +53,19 @@ CTicTacToeHumanView::CTicTacToeHumanView()
 	m_guiStart.RegisterDelegate("CTicTacToeHumanView::StartOverComputer", MakeDelegate(this, &CTicTacToeHumanView::StartOverComputer));
 	m_guiStart.RegisterDelegate("CTicTacToeHumanView::StartOverPlayer", MakeDelegate(this, &CTicTacToeHumanView::StartOverPlayer));
 
+	m_guiStartOver.RegisterDelegate("CTicTacToeHumanView::StartOverComputer", MakeDelegate(this, &CTicTacToeHumanView::StartOverComputer));
+	m_guiStartOver.RegisterDelegate("CTicTacToeHumanView::StartOverPlayer", MakeDelegate(this, &CTicTacToeHumanView::StartOverPlayer));
+
 	// Load the GUIs from file.
 	m_guiBoard.LoadGUIFromFile("GUI/MainGUI.xml");
 	m_guiAi.LoadGUIFromFile("GUI/AiSelectGUI.xml");
 	m_guiStart.LoadGUIFromFile("GUI/StartGUI.xml");
+	m_guiStartOver.LoadGUIFromFile("GUI/StartOverGUI.xml");
 
 	// Hide the ai and board GUIs.
 	m_guiAi.Hide();
 	m_guiBoard.Hide();
+	m_guiStartOver.Hide();
 }
 
 CTicTacToeHumanView::~CTicTacToeHumanView()
@@ -69,7 +77,7 @@ void CTicTacToeHumanView::VUpdate(float _fDeltaTime)
 {
 	for (int i = 0; i < CBoardState::s_kiBOARD_SIZE && i < m_guiBoard.GetElements().size(); ++i) {
 		if (m_boardState[i] != eBLANK) {
-			m_guiBoard.GetElements()[i]->Hide();
+			m_guiBoard.GetElements()[i]->VHide();
 		}
 		else {
 			//m_guiBoard.GetElements()[i]->Show();
@@ -78,7 +86,6 @@ void CTicTacToeHumanView::VUpdate(float _fDeltaTime)
 
 	if (m_boardState.GetWinner() != eBLANK || m_boardState.IsFull()) {
 		m_guiBoard.Hide();
-		m_guiStart.Show();
 	}
 }
 
@@ -88,6 +95,7 @@ void CTicTacToeHumanView::VRender(float _fDeltaTime)
 
 	// Render the GUI.
 	m_guiStart.Render();
+	m_guiStartOver.Render();
 	m_guiBoard.Render();
 	m_guiAi.Render();
 
@@ -124,6 +132,9 @@ bool CTicTacToeHumanView::VMsgProc(const CAppMsg& _krMsg)
 	if (m_guiStart.HandleEvents(_krMsg)) {
 		return true;
 	}
+	else if (m_guiStartOver.HandleEvents(_krMsg)) {
+		return true;
+	}
 	else if (m_guiBoard.HandleEvents(_krMsg)) {
 		return true;
 	}
@@ -143,7 +154,12 @@ void CTicTacToeHumanView::MoveTopLeft()
 	EInvalidMove eError = m_boardState.AttemptMove(0, eCROSS);
 
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT);
+		if (m_bIsComputerEasy) {
+			m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+		}
+		else {
+			m_boardState.MinMaxMove(eNAUGHT);
+		}
 	}
 }
 
@@ -151,7 +167,12 @@ void CTicTacToeHumanView::MoveTopMiddle()
 {
 	EInvalidMove eError = m_boardState.AttemptMove(1, eCROSS);
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT);
+		if (m_bIsComputerEasy) {
+			m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+		}
+		else {
+			m_boardState.MinMaxMove(eNAUGHT);
+		}
 	}
 }
 
@@ -159,7 +180,12 @@ void CTicTacToeHumanView::MoveTopRight()
 {
 	EInvalidMove eError = m_boardState.AttemptMove(2, eCROSS);
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT);
+		if (m_bIsComputerEasy) {
+			m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+		}
+		else {
+			m_boardState.MinMaxMove(eNAUGHT);
+		}
 	}
 }
 
@@ -167,7 +193,12 @@ void CTicTacToeHumanView::MoveMiddleLeft()
 {
 	EInvalidMove eError = m_boardState.AttemptMove(3, eCROSS);
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT);
+		if (m_bIsComputerEasy) {
+			m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+		}
+		else {
+			m_boardState.MinMaxMove(eNAUGHT);
+		}
 	}
 }
 
@@ -175,7 +206,7 @@ void CTicTacToeHumanView::MoveMiddleMiddle()
 {
 	EInvalidMove eError = m_boardState.AttemptMove(4, eCROSS);
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT);
+		m_boardState.MinMaxMove(eNAUGHT, 1);
 	}
 }
 
@@ -183,7 +214,12 @@ void CTicTacToeHumanView::MoveMiddleRight()
 {
 	EInvalidMove eError = m_boardState.AttemptMove(5, eCROSS);
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT);
+		if (m_bIsComputerEasy) {
+			m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+		}
+		else {
+			m_boardState.MinMaxMove(eNAUGHT);
+		}
 	}
 }
 
@@ -191,7 +227,12 @@ void CTicTacToeHumanView::MoveBottomLeft()
 {
 	EInvalidMove eError = m_boardState.AttemptMove(6, eCROSS);
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT);
+		if (m_bIsComputerEasy) {
+			m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+		}
+		else {
+			m_boardState.MinMaxMove(eNAUGHT);
+		}
 	}
 }
 
@@ -199,7 +240,12 @@ void CTicTacToeHumanView::MoveBottomMiddle()
 {
 	EInvalidMove eError = m_boardState.AttemptMove(7, eCROSS);
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT);
+		if (m_bIsComputerEasy) {
+			m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+		}
+		else {
+			m_boardState.MinMaxMove(eNAUGHT);
+		}
 	}
 }
 
@@ -207,36 +253,64 @@ void CTicTacToeHumanView::MoveBottomRight()
 {
 	EInvalidMove eError = m_boardState.AttemptMove(8, eCROSS);
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT);
+		if (m_bIsComputerEasy) {
+			m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+		}
+		else {
+			m_boardState.MinMaxMove(eNAUGHT);
+		}
 	}
 }
 
 void CTicTacToeHumanView::StartOverComputer()
 {
 	m_guiStart.Hide();
+	m_guiStartOver.Hide();
+
 	m_guiAi.Show();
 
 	m_boardState = CBoardState();
 
-	m_boardState.MinMaxMove(eNAUGHT);
+	m_bComputerStart = true;
 }
 
 void CTicTacToeHumanView::StartOverPlayer()
 {
+	m_guiStart.Hide();
+	m_guiStartOver.Hide();
+
+	m_guiAi.Show();
+
+	// Clear the board.
 	m_boardState = CBoardState();
 
-	m_guiStart.Hide();
-	m_guiAi.Show();
+	m_bComputerStart = false;
 }
 
 void CTicTacToeHumanView::Unbeatable() 
 {
 	m_guiAi.Hide();
+
 	m_guiBoard.Show();
+	m_guiStartOver.Show();
+
+	m_bIsComputerEasy = false;
+
+	if (m_bComputerStart) {
+		m_boardState.MinMaxMove(eNAUGHT);
+	}
 }
 
 void CTicTacToeHumanView::Easy()
 {
 	m_guiAi.Hide();
+
 	m_guiBoard.Show();
+	m_guiStartOver.Show();
+
+	m_bIsComputerEasy = true;
+
+	if (m_bComputerStart) {
+		m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+	}
 }

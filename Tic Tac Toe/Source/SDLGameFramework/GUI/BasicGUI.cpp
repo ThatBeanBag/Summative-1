@@ -130,7 +130,7 @@ void CBasicGUI::Hide()
 {
 	for (unsigned int i = 0; i < m_guiElements.size(); ++i) {
 		if (m_guiElements[i]) {
-			m_guiElements[i]->Hide();
+			m_guiElements[i]->VHide();
 		}
 	}
 }
@@ -139,7 +139,7 @@ void CBasicGUI::Show()
 {
 	for (unsigned int i = 0; i < m_guiElements.size(); ++i) {
 		if (m_guiElements[i]) {
-			m_guiElements[i]->Show();
+			m_guiElements[i]->VShow();
 		}
 	}
 }

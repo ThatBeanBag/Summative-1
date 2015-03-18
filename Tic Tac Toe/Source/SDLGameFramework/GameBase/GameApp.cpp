@@ -16,7 +16,6 @@
 #include "GameStd.h"
 
 // Library Includes
-#include <time.h>	// For time(0)
 
 // This Include
 #include "GameApp.h"
@@ -92,12 +91,9 @@ bool CGameApp::VInitialize(int _iFrameRate)
 	// Load the icon from file.
 	pIcon = IMG_Load(VGetIcon().c_str());
 
-	if(pIcon) {
+	if (pIcon) {
 		SDL_SetWindowIcon(m_pWindow, pIcon);
 	}
-
-	// Seed the random number generator.
-	srand(static_cast<unsigned int>(time(0)));
 
 	m_pGame = VCreateGame();	// Creates and initializes the game.
 

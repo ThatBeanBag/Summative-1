@@ -16,12 +16,15 @@
 #include "GameStd.h"
 
 // Library Includes
+#include <time.h>	// For time(0)
 
 // Local Includes
-//#include "Console\Console.h"
 
 int main(int argc, char* args[])
 {
+	// Seed the random number generator.
+	srand(time(0));
+
 	// Initailize the application.
 	if(!g_pApp->VInitialize()) {
 		g_pApp->OnClose();
