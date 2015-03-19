@@ -40,7 +40,7 @@
 #include <string>
 
 #include <tinyxml.h>
-#include <vld.h>	// Leak detection.
+//#include <vld.h>	// Leak detection.
 
 using std::tr1::shared_ptr;
 using std::tr1::static_pointer_cast;

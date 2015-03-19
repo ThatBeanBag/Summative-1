@@ -70,14 +70,14 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <OutDir>$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\</IntDir>
-    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\..\SDLGameFramework\3rdParty\tinyxml;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Users\Hayden.Asplet\Programs\SDL2-2.0.3\include;C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\..\SDLGameFramework\3rdParty\tinyxml;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Users\Hayden.Asplet\Programs\SDL2-2.0.3\lib\x86;C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\</OutDir>
     <IntDir>$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\</IntDir>
-    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\..\SDLGameFramework\3rdParty\tinyxml;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Users\Hayden.Asplet\Programs\SDL2-2.0.3\include;C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\..\SDLGameFramework\3rdParty\tinyxml;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Users\Hayden.Asplet\Programs\SDL2-2.0.3\lib\x86;C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

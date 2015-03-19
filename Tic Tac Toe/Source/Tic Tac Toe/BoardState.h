@@ -97,6 +97,14 @@ public:
 	// Returns the winner, if there is one. If there is no winner this will return a blank.
 	EPlayer GetWinner() const;
 
+	// Gets the win positions of the naughts or crosses on a board if there is a winner and stores them in _iWinPositions.
+	// If there is no winner this funtion will return false, otherwise it will return true.
+	bool GetWinPositions(int _iWinPositions[s_kiBOARD_COL]) const;
+
+	// Returns true if the _iBoardPosition is in a column, row or diagonal that has only either naughts or crosses in it.,
+	// otherwise it returns false.
+	bool IsAWinPosition(int _iBoardPosition) const;
+
 	// Returns true if the board has no empty or blank slots, false otherwise.
 	bool IsFull() const;
 
@@ -112,6 +120,8 @@ public:
 	// make a random move.
 	void MinMaxMove(EPlayer _ePlayer, float _fChanceOfRandomMove = 0);
 
+	void AlphaBetaMove(EPlayer _ePlayer, float _fChanceOfRandomMove = 0);
+
 	// Makes a psuedo-random move for the given player if the board is not full, otherwise it will
 	// just return false.
 	bool PerformRandomMove(EPlayer _ePlayer);
@@ -121,7 +131,7 @@ public:
 
 protected:
 private:
-	// These next three functions are made static as they do not manipulate or call on any 
+	// These next four functions are made static as they do not manipulate or call on any 
 	// non-static member variables/functions. They are merely here to restrict their use to only
 	// from within the CBoardState class. 
 	//
@@ -134,6 +144,10 @@ private:
 
 	// Returns the winner, if there is one. If there is no winner this will return a blank.
 	static EPlayer GetWinner(const EPlayer _eBoard[s_kiBOARD_SIZE]);
+
+	// Gets the win positions of the naughts or crosses on a board if there is a winner and stores them in _iWinPositions.
+	// If there is no winner this funtion will return false, otherwise it will return true.
+	static bool GetWinPositions(int _iWinPositions[s_kiBOARD_COL], const EPlayer _eBoard[s_kiBOARD_SIZE]);
 
 	// Returns true if the board has no empty or blank slots, false otherwise.
 	static bool IsFull(const EPlayer _eBoard[s_kiBOARD_SIZE]);

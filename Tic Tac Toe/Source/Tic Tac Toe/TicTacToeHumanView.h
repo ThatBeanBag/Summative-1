@@ -68,6 +68,9 @@ private:
 
 	bool m_bComputerStart;
 	bool m_bIsComputerEasy;
+
+	bool m_bIsThereAWinner;
+	int m_iWinPositions[CBoardState::s_kiBOARD_COL];
 };
 
 #endif // __TICTACTOEHUMANVIEW_H__

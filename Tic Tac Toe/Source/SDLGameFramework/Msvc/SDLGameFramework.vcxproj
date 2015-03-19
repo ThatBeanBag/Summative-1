@@ -44,8 +44,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetExt>.lib</TargetExt>
     <IntDir>$(ProjectDir)..\..\Temp\$(PlatformName)$(Configuration)\</IntDir>
-    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\3rdParty\tinyxml;$(ProjectDir)..\3rdParty\fastdelegate;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Users\Hayden.Asplet\Programs\SDL2-2.0.3\include;D:\Users\Hayden.Asplet\Programs\SDL2-2.0.3\include;C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\3rdParty\tinyxml;$(ProjectDir)..\3rdParty\fastdelegate;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Users\Hayden.Asplet\Programs\SDL2-2.0.3\lib\x86;C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(ProjectDir)..\..\Lib\$(PlatformName)$(Configuration)\</OutDir>
@@ -53,8 +53,8 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetExt>.lib</TargetExt>
     <IntDir>$(ProjectDir)..\..\Temp\$(PlatformName)$(Configuration)\</IntDir>
-    <IncludePath>C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\3rdParty\tinyxml;$(ProjectDir)..\3rdParty\fastdelegate;$(IncludePath)</IncludePath>
-    <LibraryPath>C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
+    <IncludePath>D:\Users\Hayden.Asplet\Programs\SDL2-2.0.3\include;C:\Program Files %28x86%29\Visual Leak Detector\include;$(ProjectDir)..\3rdParty\tinyxml;$(ProjectDir)..\3rdParty\fastdelegate;$(IncludePath)</IncludePath>
+    <LibraryPath>D:\Users\Hayden.Asplet\Programs\SDL2-2.0.3\lib\x86;C:\Program Files %28x86%29\Visual Leak Detector\lib\Win32;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

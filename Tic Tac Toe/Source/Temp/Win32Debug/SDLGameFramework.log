@@ -1,45 +1,76 @@
-﻿Build started 18/03/2015 8:04:53 p.m..
-     1>Project "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\SDLGameFramework.vcxproj" on node 2 (Build target(s)).
+﻿Build started 19/03/2015 9:15:34 a.m..
+     1>Project "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\SDLGameFramework.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"GameStd.h" /Fp"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\SDLGameFramework.pch" /Fo"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\\" /Fd"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\GameBase\GameApp.cpp ..\main.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"GameStd.h" /Fp"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\SDLGameFramework.pch" /Fo"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\\" /Fd"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\GameStd.cpp
+         GameStd.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"GameStd.h" /Fp"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\SDLGameFramework.pch" /Fo"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\\" /Fd"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\3rdParty\tinyxml\tinystr.cpp ..\3rdParty\tinyxml\tinyxml.cpp ..\3rdParty\tinyxml\tinyxmlerror.cpp ..\3rdParty\tinyxml\tinyxmlparser.cpp ..\Events\EventData.cpp ..\Events\EventManager.cpp ..\GUI\BasicGUI.cpp ..\GUI\GUIButton.cpp ..\GUI\GUIElement.cpp ..\GUI\GUIStatic.cpp ..\GameBase\GameApp.cpp ..\GameBase\GameLogic.cpp ..\GameBase\Sprite\Sprite.cpp ..\GameObject\AnimationComponent.cpp ..\GameObject\DestroyAfterComponent.cpp ..\GameObject\GameObject.cpp ..\GameObject\ObjectComponent.cpp ..\GameObject\ObjectFactory.cpp ..\GameObject\PhysicsComponent.cpp ..\GameObject\PositionComponent.cpp ..\GameObject\RenderComponent.cpp ..\GameView\HumanView.cpp ..\Physics\Physics.cpp ..\Renderer\Renderer.cpp ..\Utilities\Line.cpp ..\Utilities\Point.cpp ..\Utilities\Rect.cpp ..\Utilities\Utilities.cpp ..\main.cpp
          main.cpp
-     1>c:\users\playtech\documents\mediadesignschool\year 2\p01 - artificial intelligence\summative-1\tic tac toe\source\sdlgameframework\main.cpp(26): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>d:\users\hayden.asplet\documents\p01 - artificial intelligence\summative-1\tic tac toe\source\sdlgameframework\main.cpp(26): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+         Utilities.cpp
+         Rect.cpp
+         Point.cpp
+         Line.cpp
+         Renderer.cpp
+         Physics.cpp
+         HumanView.cpp
+         RenderComponent.cpp
+         PositionComponent.cpp
+         PhysicsComponent.cpp
+         ObjectFactory.cpp
+         ObjectComponent.cpp
+         GameObject.cpp
+         DestroyAfterComponent.cpp
+         AnimationComponent.cpp
+         Sprite.cpp
+         GameLogic.cpp
          GameApp.cpp
+         GUIStatic.cpp
+         Generating Code...
+         Compiling...
+         GUIElement.cpp
+         GUIButton.cpp
+         BasicGUI.cpp
+         EventManager.cpp
+         EventData.cpp
+         tinyxmlparser.cpp
+         tinyxmlerror.cpp
+         tinyxml.cpp
+         tinystr.cpp
          Generating Code...
        Lib:
-         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Lib\Win32Debug\SDLGameFramework.lib" /NOLOGO "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinystr.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinyxml.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinyxmlerror.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinyxmlparser.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\EventData.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\EventManager.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GameApp.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GameLogic.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Sprite.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\AnimationComponent.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\DestroyAfterComponent.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GameObject.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\ObjectComponent.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\ObjectFactory.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\PhysicsComponent.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\PositionComponent.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\RenderComponent.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GameStd.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\HumanView.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\BasicGUI.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GUIButton.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GUIElement.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GUIStatic.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\main.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Physics.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Renderer.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Line.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Point.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Rect.obj"
-         "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Utilities.obj"
-         SDLGameFramework.vcxproj -> C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Lib\Win32Debug\SDLGameFramework.lib
-     1>Done Building Project "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\SDLGameFramework.vcxproj" (Build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\Lib.exe /OUT:"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Lib\Win32Debug\SDLGameFramework.lib" /NOLOGO "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinystr.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinyxml.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinyxmlerror.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\tinyxmlparser.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\EventData.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\EventManager.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GameApp.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GameLogic.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Sprite.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\AnimationComponent.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\DestroyAfterComponent.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GameObject.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\ObjectComponent.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\ObjectFactory.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\PhysicsComponent.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\PositionComponent.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\RenderComponent.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GameStd.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\HumanView.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\BasicGUI.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GUIButton.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GUIElement.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\GUIStatic.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\main.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Physics.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Renderer.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Line.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Point.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Rect.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Temp\Win32Debug\Utilities.obj"
+         SDLGameFramework.vcxproj -> D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\..\..\Lib\Win32Debug\SDLGameFramework.lib
+     1>Done Building Project "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\SDLGameFramework\Msvc\SDLGameFramework.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.50
+Time Elapsed 00:00:02.35

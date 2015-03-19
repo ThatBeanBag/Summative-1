@@ -16,6 +16,7 @@
 #include "TicTacToeStd.h"
 
 // Library Includes
+#include <algorithm>
 
 // This Include
 #include "BoardState.h"
@@ -60,7 +61,6 @@ const EPlayer& CBoardState::operator[](int _iBoardPosition) const
 	if (_iBoardPosition < 0 || _iBoardPosition >= s_kiBOARD_SIZE) {
 		// Just assert. Really this should throw an exception or provide some other more
 		// elegant solution, but for now an assertion will suffice.
-		// TODO: Implement more elegant solution.
 		assert(false);
 	}
 
@@ -85,6 +85,43 @@ EPlayer CBoardState::GetWinner() const
 {
 	// Call the static member function on the board avoiding code duplication.
 	return GetWinner(m_eBoard);
+}
+
+bool CBoardState::GetWinPositions(int _iWinPositions[s_kiBOARD_COL]) const
+{
+	// Call the static private version of this function to avoid code duplication.
+	return GetWinPositions(_iWinPositions, m_eBoard);
+}
+
+bool CBoardState::IsAWinPosition(int _iBoardPosition) const
+{
+	int iWinPositions[s_kiBOARD_COL];	// Array to store the win positions.
+
+	// Define all iWinPositions values to an out of bounds value so that
+	// they can be accurately compared with _iBoardPosition in the event
+	// that there is no winner with this board.
+	for (int i = 0; i < s_kiBOARD_COL; ++i) {
+		iWinPositions[i] = -1;
+	}
+
+	if (!GetWinPositions(iWinPositions)) {
+	// Is there currently no winner?
+		// Return not a win position, as there is no winner on this board state.
+		return false;
+	}
+
+	// Loop through all the win positions.
+	for (int i = 0; i < s_kiBOARD_COL; ++i) {
+		if (iWinPositions[i] == _iBoardPosition) {
+			return true;
+		}
+		else {
+			// Continue.
+		}
+	}
+
+	// Return not a win position.
+	return false;
 }
 
 bool CBoardState::IsFull() const
@@ -138,6 +175,9 @@ EInvalidMove CBoardState::ForceMove(int _iBoardPosition, EPlayer _ePlayer)
 
 void CBoardState::MinMaxMove(EPlayer _ePlayer, float _fChanceOfRandomMove)
 {
+	//AlphaBetaMove(_ePlayer, _fChanceOfRandomMove);
+	//return;
+
 	// We can optimize this in such a way that the first move is hard coded.
 	// The first move will always take ~9 times the amount of the second move.
 	// Thus hard coding this one move will provide a significant optimization.
@@ -182,6 +222,87 @@ void CBoardState::MinMaxMove(EPlayer _ePlayer, float _fChanceOfRandomMove)
 
 				// Reset the state back to blank after attempt.
 				m_eBoard[i] = eBLANK;
+			}
+		}
+
+		m_eBoard[iMove] = _ePlayer;
+	}
+}
+
+void CBoardState::AlphaBetaMove(EPlayer _ePlayer, float _fChanceOfRandomMove)
+{
+	// We can optimize this in such a way that the first move is hard coded.
+	// The first move will always take ~9 times the amount of the second move.
+	// Thus hard coding this one move will provide a significant optimization.
+	// To win the first move will always be in a corner no matter what, it
+	// doesn't matter which corner (any will do).
+
+	// Get a random number between 0 and 1.
+	double dRand = rand() / static_cast<double>(RAND_MAX + 1);
+
+	if (dRand < _fChanceOfRandomMove) {
+		PerformRandomMove(_ePlayer);
+	}
+	else {
+		int iAlpha = static_cast<int>(eNAUGHT) - 1;
+		int iBeta = static_cast<int>(eCROSS) + 1;
+		int iMove = -1;
+
+		if (_ePlayer == eCROSS) {
+			// Maximum player.
+			int iScore = static_cast<int>(eNAUGHT) - 1;	// Effectively -infinity.
+
+			for (int i = 0; i < s_kiBOARD_SIZE; ++i) {
+				if (m_eBoard[i] == eBLANK) {
+					// Is this space empty?
+
+					// Perform the move on the next board state.
+					m_eBoard[i] = _ePlayer;
+
+					iScore = MinMaxAlphaBeta(m_eBoard, iAlpha, iBeta, eNAUGHT);
+
+					if (iScore > iAlpha) {
+						iMove = i;
+
+						iAlpha = iScore;
+					}
+
+					// Reset the state back to blank after attempt.
+					m_eBoard[i] = eBLANK;
+
+					if (iBeta <= iAlpha) {
+						// B cut-off.
+						break;
+					}
+				}
+			}
+		}
+		else if (_ePlayer == eNAUGHT) {
+			// Minimizing player.
+			int iScore = static_cast<int>(eCROSS) + 1; // Effectively infinity.
+
+			for (int i = 0; i < s_kiBOARD_SIZE; ++i) {
+				if (m_eBoard[i] == eBLANK) {
+					// Is this space empty?
+
+					// Perform the move on the next board state.
+					m_eBoard[i] = _ePlayer;
+
+					iScore = MinMaxAlphaBeta(m_eBoard, iAlpha, iBeta, eCROSS);
+
+					if (iScore < iBeta) {
+						iMove = i;
+						iBeta = iScore;
+					}
+
+					// Reset the state back to blank after attempt.
+					m_eBoard[i] = eBLANK;
+
+					if (iBeta <= iAlpha) {
+						// A cut-off.
+						break;
+					}
+				}
 			}
 		}
 
@@ -297,7 +418,7 @@ int CBoardState::MinMaxAlphaBeta(EPlayer _eBoard[s_kiBOARD_SIZE], int _iAlpha, i
 	EPlayer eWinner = GetWinner(_eBoard);
 
 	if (eWinner != eBLANK) {
-		return static_cast<int>(_ePlayer * eWinner);
+		return static_cast<int>(eWinner);
 	}
 	else if (IsFull(_eBoard)) {
 		// The board is full and there is no winner. This means it's a draw.
@@ -305,50 +426,83 @@ int CBoardState::MinMaxAlphaBeta(EPlayer _eBoard[s_kiBOARD_SIZE], int _iAlpha, i
 		return static_cast<int>(eBLANK);
 	}
 	else {
-		int iScore = -2;	// Not making a move is worse than losing.
+		if (_ePlayer == eCROSS) {
+			// Maximum player.
 
-		for (int i = 0; i < s_kiBOARD_SIZE; ++i) {
-			if (_eBoard[i] == eBLANK) {
-				// Is this space empty?
-				EPlayer eNext;	// The player who will player after this move.
+			int iScore = static_cast<int>(eNAUGHT) - 1;	// Effectively -infinity.
 
-				if (_ePlayer == eNAUGHT) {
-					eNext = eCROSS;
-				}
-				else if (_ePlayer == eCROSS) {
-					eNext = eNAUGHT;
-				}
-				else {
-					// There is no blank player, thus we need no make a move.
-					assert(false);	// We should never get to this branch, a eBLANK has been passed.
-					return iScore;
-				}
+			for (int i = 0; i < s_kiBOARD_SIZE; ++i) {
+				if (_eBoard[i] == eBLANK) {
+					// Is this space empty?
 
-				// Perform the move on the next board state.
-				_eBoard[i] = _ePlayer;
+					// Perform the move on the next board state.
+					_eBoard[i] = _ePlayer;
 
-				int iScore = -MinMaxAlphaBeta(_eBoard, _iAlpha, _iBeta, eNext);
+					iScore = MinMaxAlphaBeta(_eBoard, _iAlpha, _iBeta, eNAUGHT);
 
-				_iAlpha = max(iScore, _iAlpha);
-				_iBeta = min(iScore, _iBeta);
+					_iAlpha = std::max(iScore, _iAlpha);
 
-				if (_iBeta <= _iAlpha) {
 					// Reset the state back to blank after attempt.
 					_eBoard[i] = eBLANK;
 
-					break;
+					if (_iBeta <= _iAlpha) {
+						// B cut-off.
+						break;
+					}
 				}
-
-				// Reset the state back to blank after attempt.
-				_eBoard[i] = eBLANK;
 			}
-		}
 
-		return iScore;
+			return iScore;
+		}
+		else if (_ePlayer == eNAUGHT) {
+		// Minimizing player.
+			int iScore = static_cast<int>(eCROSS) + 1; // Effectively infinity.
+
+			for (int i = 0; i < s_kiBOARD_SIZE; ++i) {
+				if (_eBoard[i] == eBLANK) {
+					// Is this space empty?
+
+					// Perform the move on the next board state.
+					_eBoard[i] = _ePlayer;
+
+					iScore = MinMaxAlphaBeta(_eBoard, _iAlpha, _iBeta, eCROSS);
+
+					_iBeta = std::min(iScore, _iBeta);
+
+					// Reset the state back to blank after attempt.
+					_eBoard[i] = eBLANK;
+
+					if (_iBeta <= _iAlpha) {
+						// A cut-off.
+						break;
+					}
+				}
+			}
+
+			return iScore;
+		}
 	}
 }
 
 EPlayer CBoardState::GetWinner(const EPlayer _eBoard[s_kiBOARD_SIZE])
+{
+	int iWinPositions[s_kiBOARD_SIZE];	// Array to store the win positions.
+
+	if (GetWinPositions(iWinPositions, _eBoard)) {
+	// Is there are winner?
+		// Return the player at the first win position.
+		return _eBoard[iWinPositions[0]];
+	}
+	else {
+	// There's no winner.
+		// Return eBLANK as a default return value.
+		return eBLANK;
+	}
+
+	return eBLANK;
+}
+
+bool CBoardState::GetWinPositions(int _iWinPositions[s_kiBOARD_COL], const EPlayer _eBoard[s_kiBOARD_SIZE])
 {
 	// For an N x N board the total win board position configurations are 2N + 2. 
 	// This is determined by 1 for each column, 1 for each row and the two diagonals.
@@ -389,13 +543,18 @@ EPlayer CBoardState::GetWinner(const EPlayer _eBoard[s_kiBOARD_SIZE])
 			}
 
 			if (bHasWon) {
-				return _eBoard[_iWins[i][0]];
+				// Copy the wins into the _iWinPositions.
+				for (int j = 0; j < s_kiBOARD_COL; ++j) {
+					_iWinPositions[j] = _iWins[i][j];
+				}
+
+				return true;
 			}
 		}
 	}
 
 	// No-one is the winner yet.
-	return eBLANK;
+	return false;
 }
 
 bool CBoardState::IsFull(const EPlayer _keBoard[s_kiBOARD_SIZE])

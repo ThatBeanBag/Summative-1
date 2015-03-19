@@ -1,9 +1,18 @@
-﻿Build started 18/03/2015 8:23:45 p.m..
-     1>Project "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\Tic Tac Toe.vcxproj" on node 2 (Build target(s)).
-     1>Link:
-         Tic Tac Toe.vcxproj -> C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\Tic Tac Toe.exe
-     1>Done Building Project "C:\Users\Playtech\Documents\MediaDesignSchool\Year 2\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\Tic Tac Toe.vcxproj" (Build target(s)).
+﻿Build started 19/03/2015 3:18:10 p.m..
+     1>Project "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\Tic Tac Toe.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"TicTacToeStd.h" /Fp"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\Tic Tac Toe.pch" /Fo"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\\" /Fd"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt ..\TicTacToeApp.cpp
+         TicTacToeApp.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\Tic Tac Toe.exe" /INCREMENTAL /NOLOGO SDL2.lib SDL2main.lib SDL2_image.lib SDLGameFramework.lib kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\Tic Tac Toe.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\Tic Tac Toe.lib" /MACHINE:X86 "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\BoardState.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\EvtDataTicTacToeMove.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\TicTacToeApp.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\TicTacToeHumanView.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\TicTacToeLogic.obj"
+         "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\TicTacToeStd.obj"
+         Tic Tac Toe.vcxproj -> D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\..\..\Lib\Win32Debug\Tic Tac Toe.exe
+     1>Done Building Project "D:\Users\Hayden.Asplet\Documents\P01 - Artificial Intelligence\Summative-1\Tic Tac Toe\Source\Tic Tac Toe\Msvc\Tic Tac Toe.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.06
+Time Elapsed 00:00:00.63

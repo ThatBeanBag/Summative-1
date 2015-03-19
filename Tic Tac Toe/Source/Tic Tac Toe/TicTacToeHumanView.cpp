@@ -75,6 +75,17 @@ CTicTacToeHumanView::~CTicTacToeHumanView()
 
 void CTicTacToeHumanView::VUpdate(float _fDeltaTime)
 {
+	m_bIsThereAWinner = false;
+	m_iWinPositions[CBoardState::s_kiBOARD_COL];
+
+	if (m_boardState.GetWinner() != eBLANK || m_boardState.IsFull()) {
+		m_guiBoard.Hide();
+
+		if (m_boardState.GetWinPositions(m_iWinPositions)) {
+			m_bIsThereAWinner = true;
+		}
+	}
+
 	for (int i = 0; i < CBoardState::s_kiBOARD_SIZE && i < m_guiBoard.GetElements().size(); ++i) {
 		if (m_boardState[i] != eBLANK) {
 			m_guiBoard.GetElements()[i]->VHide();
@@ -82,10 +93,6 @@ void CTicTacToeHumanView::VUpdate(float _fDeltaTime)
 		else {
 			//m_guiBoard.GetElements()[i]->Show();
 		}
-	}
-
-	if (m_boardState.GetWinner() != eBLANK || m_boardState.IsFull()) {
-		m_guiBoard.Hide();
 	}
 }
 
@@ -109,11 +116,23 @@ void CTicTacToeHumanView::VRender(float _fDeltaTime)
 		for (int j = 0; j < CBoardState::s_kiBOARD_COL; ++j) {
 			CPoint position(iStartX + iOffset * i, iStartY + iOffset * j);
 
-			if (m_boardState[i + j * CBoardState::s_kiBOARD_COL] == eNAUGHT) {
-				g_pApp->RenderSprite(m_naughtSprite, position, 1);
+			int iBoardPosition = i + j * CBoardState::s_kiBOARD_COL;
+
+			if (m_boardState[iBoardPosition] == eNAUGHT) {
+				if (m_boardState.IsAWinPosition(iBoardPosition)) {
+					g_pApp->RenderSprite(m_naughtSprite, position, 2);
+				}
+				else {
+					g_pApp->RenderSprite(m_naughtSprite, position, 1);
+				}
 			}
-			else if (m_boardState[i + j * CBoardState::s_kiBOARD_COL] == eCROSS) {
-				g_pApp->RenderSprite(m_crossSprite, position, 1);
+			else if (m_boardState[iBoardPosition] == eCROSS) {
+				if (m_boardState.IsAWinPosition(iBoardPosition)) {
+					g_pApp->RenderSprite(m_crossSprite, position, 2);
+				}
+				else {
+					g_pApp->RenderSprite(m_crossSprite, position, 1);
+				}
 			}
 			else {
 			}
@@ -206,7 +225,12 @@ void CTicTacToeHumanView::MoveMiddleMiddle()
 {
 	EInvalidMove eError = m_boardState.AttemptMove(4, eCROSS);
 	if (eError == eVALID && !m_boardState.IsFull() && m_boardState.GetWinner() == eBLANK) {
-		m_boardState.MinMaxMove(eNAUGHT, 1);
+		if (m_bIsComputerEasy) {
+			m_boardState.MinMaxMove(eNAUGHT, g_kfCHANCE_OF_EASY_AI);
+		}
+		else {
+			m_boardState.MinMaxMove(eNAUGHT);
+		}
 	}
 }
 
